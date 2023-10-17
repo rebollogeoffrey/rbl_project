@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Global";
+  color: var(--LightestOne);
+}
+
+body {
+  background-color: var(--NearBlack);
+  background-image: url("../assets/images/bg_hub.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+@font-face {
+  font-family: "Global";
+  src: local("Langar-Regular"),
+    url("../assets/fonts/Langar/Langar-Regular.ttf") format("truetype");
+}
