@@ -1,0 +1,24 @@
+services:
+  frontend:
+    build: ./rbl_frontend
+    ports:
+      - 5050:5173
+    volumes:
+      - ./rbl_frontend/src/:/app/src/
+    command: npm run dev
+
+  tgpq:
+    build: ./rbl_tgpq
+    ports:
+      - 8261:3261
+    volumes:
+      - ./rbl_tgpq/src/:/app/src/
+    command: npm run start:dev
+
+  user:
+    build: ./rbl_user
+    ports:
+      - 8063:3063
+    volumes:
+      - ./rbl_user/src/:/app/src/
+    command: npm run start:dev
