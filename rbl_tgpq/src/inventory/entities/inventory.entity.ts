@@ -3,6 +3,7 @@ import { Personnage } from '../../personnage/entities/personnage.entity';
 import {
   Column,
   CreateDateColumn,
+  Entity,
   JoinTable,
   ManyToMany,
   ManyToOne,
@@ -10,6 +11,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
+@Entity()
 export class Inventory {
   @PrimaryGeneratedColumn('uuid')
   id: string;

@@ -105,6 +105,7 @@ export class Personnage {
     type: 'enum',
     nullable: false,
     comment: 'Category of personnage',
+    enum: Category,
   })
   category: Category;
 

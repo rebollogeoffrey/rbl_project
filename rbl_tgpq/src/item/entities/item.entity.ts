@@ -20,7 +20,7 @@ export enum Stat_affected {
   STRENGTH = 'Strength',
 }
 
-export enum Type {
+export enum Type_item {
   HAND,
   BODY,
   LEGS,
@@ -60,9 +60,18 @@ export class Item {
     type: 'enum',
     nullable: false,
     comment: 'Define what is affected by the item',
+    enum: Stat_affected,
     default: Stat_affected.NOTHING,
   })
   stat_affected: Stat_affected;
+
+  @Column({
+    type: 'enum',
+    nullable: false,
+    comment: 'Define what is the item',
+    enum: Type_item,
+  })
+  type: Type_item;
 
   // --------------TIMESTAMPS
   @CreateDateColumn({
