@@ -1,5 +1,5 @@
-import { Item } from 'src/item/entities/item.entity';
-import { Personnage } from 'src/personnage/entities/personnage.entity';
+import { Item } from '../../item/entities/item.entity';
+import { Personnage } from '../../personnage/entities/personnage.entity';
 import {
   Column,
   CreateDateColumn,
@@ -37,7 +37,7 @@ export class Inventory {
 
   // --------------RELATIONS
 
-  @ManyToMany(() => Item, (item) => item.inventories)
+  @ManyToMany(() => Item, (items) => items.inventories)
   @JoinTable()
   items: Item[];
 

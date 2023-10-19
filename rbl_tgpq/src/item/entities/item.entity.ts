@@ -8,7 +8,7 @@ import {
   ManyToMany,
 } from 'typeorm';
 import { Game } from '../../game/entities/game.entity';
-import { Inventory } from 'src/inventory/entities/inventory.entity';
+import { Inventory } from '../../inventory/entities/inventory.entity';
 
 export enum Stat_affected {
   DEXTERITY = 'Dexterity',
@@ -82,6 +82,6 @@ export class Item {
   @ManyToOne(() => Game, (game) => game.items)
   game: Game;
 
-  @ManyToMany(() => Inventory, (inventory) => inventory.items)
+  @ManyToMany(() => Inventory, (inventories) => inventories.items)
   inventories: Inventory[];
 }

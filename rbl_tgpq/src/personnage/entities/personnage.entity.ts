@@ -8,8 +8,8 @@ import {
   OneToMany,
 } from 'typeorm';
 import { Game } from '../../game/entities/game.entity';
-import { Statistic } from 'src/statistic/entities/statistic.entity';
-import { Inventory } from 'src/inventory/entities/inventory.entity';
+import { Statistic } from '../../statistic/entities/statistic.entity';
+import { Inventory } from '../../inventory/entities/inventory.entity';
 
 export enum Category {
   ANIMATE = 'Animate',

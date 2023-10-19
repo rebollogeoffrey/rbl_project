@@ -8,7 +8,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Game } from '../../game/entities/game.entity';
-import { Personnage } from 'src/personnage/entities/personnage.entity';
+import { Personnage } from '../../personnage/entities/personnage.entity';
 
 @Entity()
 export class Statistic {
