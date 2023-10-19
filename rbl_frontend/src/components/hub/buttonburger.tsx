@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import "../styles/buttonburger.css";
-import sword from "../assets/images/sword_burgermenu.png";
-import sword2 from "../assets/images/sword2_burgermenu.png";
-import NavBarContext from "../contexts/NavbarContext";
+import "../../styles/hub/buttonburger.css";
+import sword from "../../assets/images/hub/sword_burgermenu.png";
+import sword2 from "../../assets/images/hub/sword2_burgermenu.png";
+import NavBarContext from "../../contexts/hub/NavbarContext";
 
 function ButtonBurger() {
   const { modalMenu, setModalMenu } = useContext(NavBarContext);

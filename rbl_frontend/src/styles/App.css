@@ -8,7 +8,7 @@
 
 body {
   background-color: var(--NearBlack);
-  background-image: url("../assets/images/bg_hub.jpg");
+  background-image: url("../assets/images/hub/bg_hub.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +22,8 @@ body {
 }
 
 @font-face {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-family: "Global";
   src: local("Langar-Regular"),
-    url("../assets/fonts/Langar/Langar-Regular.ttf") format("truetype");
+    url("../assets/fonts/hub/Langar/Langar-Regular.ttf") format("truetype");
 }

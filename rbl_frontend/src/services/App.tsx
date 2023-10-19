@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import "../styles/App.css";
-import Footer from "../components/footer";
-import NavBar from "../components/navbar";
+import Footer from "../components/hub/footer";
+import NavBar from "../components/hub/navbar";
 
-import NavBarContext from "../contexts/NavbarContext";
+import NavBarContext from "../contexts/hub/NavbarContext";
 
-import LoginPage from "../pages/loginPage";
-import HomePage from "../pages/homePage";
-import StatisticPage from "../pages/statisticPage";
-import AccountPage from "../pages/accountPage";
+import LoginPage from "../pages/hub/loginPage";
+import HomePage from "../pages/hub/homePage";
+import StatisticPage from "../pages/hub/statisticPage";
+import AccountPage from "../pages/hub/accountPage";
 
 function App() {
   const [modalMenu, setModalMenu] = useState(false);

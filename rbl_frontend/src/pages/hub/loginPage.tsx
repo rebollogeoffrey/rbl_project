@@ -1,6 +1,6 @@
-import CreateAccountForm from "../components/formcreateaccount";
-import Login from "../components/formlogin";
-import Logo from "../components/logo";
+import CreateAccountForm from "../../components/hub/formcreateaccount";
+import Login from "../../components/hub/formlogin";
+import Logo from "../../components/hub/logo";
 
 function LoginPage() {
   return (

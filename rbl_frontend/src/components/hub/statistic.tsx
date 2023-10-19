@@ -1,4 +1,4 @@
-import "../styles/statistic.css";
+import "../../styles/hub/statistic.css";
 
 function Statistic() {
   // const globalStat = [

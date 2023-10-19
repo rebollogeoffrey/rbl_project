@@ -1,5 +1,5 @@
-import "../styles/hub.css";
-import rblLogo from "../assets/images/logo_RBL.png";
+import "../../styles/hub/hub.css";
+import rblLogo from "../../assets/images/logo_RBL.png";
 
 function Hub() {
   const arrayTest = [

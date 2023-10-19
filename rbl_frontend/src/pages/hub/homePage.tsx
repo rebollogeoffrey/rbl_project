@@ -1,5 +1,5 @@
-import Hub from "../components/hub";
-import Logo from "../components/logo";
+import Hub from "../../components/hub/hub";
+import Logo from "../../components/hub/logo";
 
 function HomePage() {
   return (

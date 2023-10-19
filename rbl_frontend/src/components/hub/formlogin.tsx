@@ -1,23 +1,23 @@
-import "../styles/form.css";
+import "../../styles/hub/form.css";
 
 function Login() {
   return (
     <div className="form-container container-login">
       <h1> Login </h1>
       <form className="form-login">
-        <label>Username</label>
+        <label>Email</label>
         <input
           type="text"
-          id="username-login"
-          name="username"
-          placeholder="Your username.."
+          id="email-login"
+          name="Email"
+          placeholder="Your email"
         />
         <label>Password</label>
         <input
           type="password"
           id="password-login"
           name="password"
-          placeholder="Your password.."
+          placeholder="Your password"
         />
 
         <input id="signin-button" type="submit" value="Sign In" />

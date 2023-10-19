@@ -1,4 +1,4 @@
-import "../styles/form.css";
+import "../../styles/hub/form.css";
 import ButtonDelete from "./buttondelete";
 
 function ModifyAccountForm() {
@@ -11,28 +11,28 @@ function ModifyAccountForm() {
           type="text"
           id="username-modify"
           name="username"
-          placeholder="Your username.."
+          placeholder="Your username"
         />
         <label>Email</label>
         <input
           type="text"
           id="email-modify"
           name="email"
-          placeholder="Your email.."
+          placeholder="Your email"
         />
         <label>Password</label>
         <input
           type="password"
           id="password-modify"
           name="password"
-          placeholder="Your password.."
+          placeholder="Your password"
         />
         <label>Confirm Password</label>
         <input
           type="password"
           id="confirm-password-modify"
           name="confirm-password"
-          placeholder="Confirm your password.."
+          placeholder="Confirm your password"
         />
 
         <input id="modify-button" type="submit" value="Done" />

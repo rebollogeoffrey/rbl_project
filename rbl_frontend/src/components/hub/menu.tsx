@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import "../styles/menu.css";
+import "../../styles/hub/menu.css";
 import Logo from "./logo";
-import NavBarContext from "../contexts/NavbarContext";
+import NavBarContext from "../../contexts/hub/NavbarContext";
 import { Link } from "react-router-dom";
 
 function Menu() {

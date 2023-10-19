@@ -1,4 +1,4 @@
-import "../styles/form.css";
+import "../../styles/hub/form.css";
 
 function CreateAccountForm() {
   return (

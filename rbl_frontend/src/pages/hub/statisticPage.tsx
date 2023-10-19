@@ -1,5 +1,5 @@
-import Logo from "../components/logo";
-import Statistic from "../components/statistic";
+import Logo from "../../components/hub/logo";
+import Statistic from "../../components/hub/statistic";
 
 function StatisticPage() {
   return (

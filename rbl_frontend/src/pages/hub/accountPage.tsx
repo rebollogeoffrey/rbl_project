@@ -1,5 +1,5 @@
-import ModifyAccountForm from "../components/formmodifyaccount";
-import Logo from "../components/logo";
+import ModifyAccountForm from "../../components/hub/formmodifyaccount";
+import Logo from "../../components/hub/logo";
 
 function AccountPage() {
   return (
