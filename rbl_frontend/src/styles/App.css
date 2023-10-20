@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Global";
+  font-family: "Hub", Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 1px;
   color: var(--LightestOne);
 }
 
@@ -22,8 +23,7 @@ body {
 }
 
 @font-face {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-family: "Global";
+  font-family: "Hub";
   src: local("Langar-Regular"),
     url("../assets/fonts/hub/Langar/Langar-Regular.ttf") format("truetype");
 }

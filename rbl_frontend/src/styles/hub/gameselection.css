@@ -1,0 +1,83 @@
+/* To set "Choose your game" page and to set GLOBALLY card game's style */
+
+/* Whole page except for the header and footer */
+.hub {
+  display: flex;
+  flex-flow: column;
+}
+
+/* Games cards container */
+.selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Games cards */
+.selection-game {
+  margin: 3% 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 20vh;
+  min-height: 150px;
+  padding: 2%;
+  gap: 4%;
+  border-radius: 10px;
+}
+
+.selection-game, .selection-game>*, .selection-game>*>* {
+  border: 1px lightseagreen;
+}
+
+/* Games cards image */
+.selection-game-img {
+  max-height: 100%;
+}
+
+/* Games cards texts (contains name and description) */
+.selection-game-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  gap: 5%;
+}
+
+/* Games cards name */
+.selection-game-name {
+  width: fit-content;
+}
+
+
+/* Games cards decription */
+.selection-game-desc {
+  margin-left: 5%;
+  text-align: justify;
+  width: 95%;
+  height: 100%;
+  overflow: auto;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-wrap: nowrap;
+}
+
+@media only screen and (min-width: 1080px) {
+  .selection-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    min-height: 60vh;
+    justify-content: space-evenly;
+  }
+
+  .selection-game {
+    margin: 0;
+    margin-top: 5vh;
+    padding: 0;
+    width: 40%;
+  }
+}

@@ -1,49 +1,52 @@
-.TGPQ {
-  border-radius: 10px;
-  background: linear-gradient(var(--DarkRed), var(--DarkestOne));
+/* To set individually each card game's style */
+/* (If you want to change globally cards's style, see hub.css) */
+
+/* The Great Peasant's Quest */
+.game-0 {
+  background: linear-gradient(var(--GameTGPQ), var(--DarkestOne));
 }
 
-.Lootery {
-  border-radius: 10px;
+.game-1 {
+  background: linear-gradient(var(--GameLootery), var(--DarkestOne));
+}
+
+.game-2 {
   background: linear-gradient(var(--Golden), var(--DarkestOne));
 }
 
-.Patata {
-  border-radius: 10px;
+.game-3 {
   background: linear-gradient(green, var(--DarkestOne));
 }
 
-.Pouet {
-  border-radius: 10px;
-  background: linear-gradient(blue, var(--DarkestOne));
+.game-4 {
+  background: linear-gradient(rgb(255, 0, 0), var(--DarkestOne));
 }
 
-.Mount {
-  border-radius: 10px;
+.game-5 {
   background: linear-gradient(violet, var(--DarkestOne));
 }
 
-.border-TGPQ,
-.border-TGPQ > h2 {
+.border-game-1,
+.border-game-1>h2 {
   border-color: var(--DarkRed);
 }
 
-.border-Lootery,
-.border-Lootery > h2 {
+.border-game-2,
+.border-game-2>h2 {
   border-color: var(--Golden);
 }
 
-.border-Pouet,
-.border-Pouet > h2 {
+.border-game-3,
+.border-game-3>h2 {
   border-color: blue;
 }
 
-.border-Patata,
-.border-Patata > h2 {
+.border-game-4,
+.border-game-4>h2 {
   border-color: green;
 }
 
-.border-Mount,
-.border-Mount > h2 {
+.border-game-5,
+.border-game-5>h2 {
   border-color: violet;
 }

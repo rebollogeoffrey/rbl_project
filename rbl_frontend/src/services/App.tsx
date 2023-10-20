@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import "../styles/App.css";
-import Footer from "../components/hub/footer";
+import Footer from "../components/footer";
 import NavBar from "../components/hub/navbar";
 
 import NavBarContext from "../contexts/hub/NavbarContext";
 
 import LoginPage from "../pages/hub/loginPage";
-import HomePage from "../pages/hub/homePage";
+import HomePage from "../pages/hub/gameSelectionPage";
 import StatisticPage from "../pages/hub/statisticPage";
 import AccountPage from "../pages/hub/accountPage";
 
