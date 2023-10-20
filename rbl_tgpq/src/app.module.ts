@@ -12,11 +12,10 @@ import { AppService } from './app.service';
 
 // Other Modules
 // TODO : import { AuthModule } from './auth/auth.module';
-import { GameModule } from './game/game.module';
-import { PersonnageModule } from './personnage/personnage.module';
+import { PersonModelModule } from './personmodel/personmodel.module';
 import { ItemModule } from './item/item.module';
+import { PersonModule } from './person/person.module';
 import { StatisticModule } from './statistic/statistic.module';
-import { InventoryModule } from './inventory/inventory.module';
 
 @Module({
   imports: [
@@ -25,11 +24,10 @@ import { InventoryModule } from './inventory/inventory.module';
       useFactory: () => databaseConfig,
     }),
     // TODO : AuthModule,
-    GameModule,
-    PersonnageModule,
+    PersonModelModule,
     ItemModule,
+    PersonModule,
     StatisticModule,
-    InventoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],
