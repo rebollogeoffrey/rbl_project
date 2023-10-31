@@ -1,26 +1,44 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePersonModelDto } from './dto/create-personmodel.dto';
-import { UpdatePersonModelDto } from './dto/update-personmodel.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Category, PersonModel } from './entities/personmodel.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class PersonModelService {
+  constructor(
+    @InjectRepository(PersonModel)
+    private personModelRepository: Repository<PersonModel>,
+  ) {}
+
   create(createPersonModelDto: CreatePersonModelDto) {
-    return 'This action adds a new PersonModel';
+    return this.personModelRepository.create(createPersonModelDto);
   }
 
   findAll() {
-    return `This action returns all PersonModel`;
+    return this.personModelRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} PersonModel`;
+  findById(id: string): Promise<PersonModel | undefined> {
+    return this.personModelRepository.findOne({
+      where: [{ id }],
+    });
   }
 
-  update(id: number, updatePersonModelDto: UpdatePersonModelDto) {
-    return `This action updates a #${id} PersonModel`;
+  async update(updatePersonModelDto): Promise<PersonModel | undefined> {
+    return this.personModelRepository.save(updatePersonModelDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} PersonModel`;
+  async remove(id: string) {
+    const result = await this.personModelRepository.delete(id);
+    if (result.affected === 1) {
+      return 'PersonModel Deleted';
+    } else return 'PersonModel Not Found';
+  }
+
+  async getPersonModelByCategory(
+    category: Category,
+  ): Promise<PersonModel[] | undefined> {
+    return this.personModelRepository.findBy({ category: category });
   }
 }

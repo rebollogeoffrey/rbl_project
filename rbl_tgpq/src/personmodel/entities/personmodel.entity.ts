@@ -120,6 +120,6 @@ export class PersonModel {
   updated_at: Date;
 
   // --------------RELATIONS
-  @OneToMany(() => Person, (person) => person.personModels)
+  @OneToMany(() => Person, (person) => person.personModel)
   persons: Person[];
 }

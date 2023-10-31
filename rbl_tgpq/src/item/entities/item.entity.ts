@@ -2,12 +2,10 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  ManyToOne,
   CreateDateColumn,
   UpdateDateColumn,
   ManyToMany,
 } from 'typeorm';
-import { Game } from '../../game/entities/game.entity';
 import { Person } from '../../person/entities/person.entity';
 
 export enum Stat_affected {
@@ -64,6 +62,13 @@ export class Item {
   })
   stat_affected: Stat_affected;
 
+  @Column({
+    type: 'int',
+    comment: 'Value of the stat_affected',
+    default: 0,
+  })
+  value: number;
+
   // --------------TIMESTAMPS
   @CreateDateColumn({
     type: 'timestamp',
@@ -79,9 +84,6 @@ export class Item {
   updated_at: Date;
 
   // --------------RELATIONS
-  @ManyToOne(() => Game, (game) => game.items)
-  game: Game;
-
   @ManyToMany(() => Person, (person) => person.items)
   inventories: Person[];
 }

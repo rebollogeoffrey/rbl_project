@@ -54,5 +54,5 @@ export class Person {
   items: Item[];
 
   @ManyToOne(() => PersonModel, (personModel) => personModel.persons)
-  personModels: PersonModel;
+  personModel: PersonModel;
 }
