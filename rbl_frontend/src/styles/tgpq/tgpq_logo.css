@@ -1,0 +1,17 @@
+.tgpq-logo-constructor {
+    height: 300px;
+}
+
+.tgpq-logo-img {
+    display: block;
+    margin: auto;
+    width: auto;
+    height: 100%;
+
+}
+
+@media only screen and (min-width: 1080px) {
+    .tgpq-home-logo-container {
+        margin: 2% 0;
+    }
+}

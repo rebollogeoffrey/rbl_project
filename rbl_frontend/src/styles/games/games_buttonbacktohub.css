@@ -1,0 +1,12 @@
+.logo-hub {
+    position: absolute;
+    border: none;
+    border-radius: 3px;
+    z-index: 99;
+    width: 15%;
+    min-width: 40px;
+    max-width: 80px;
+    margin: 2% 0 0 2%;
+    /* TODO : delete the following line when button management is ready */
+    top: 100px;
+}

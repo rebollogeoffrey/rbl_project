@@ -1,0 +1,18 @@
+.game-description-container {
+    margin: 3% 10%;
+    padding: 3%;
+    background: color-mix(in srgb, currentColor 60%, transparent);
+    border-radius: 30px;
+    max-height: 400px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+}
+
+.game-description-container p {
+    text-align: justify;
+    text-indent: 5%;
+    font-size: 1em;
+    color: var(--DarkestOne);
+
+}
