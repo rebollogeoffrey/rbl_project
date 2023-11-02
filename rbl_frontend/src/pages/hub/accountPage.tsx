@@ -1,14 +1,14 @@
 import ModifyAccountForm from "../../components/hub/formmodifyaccount";
-import Logo from "../../components/hub/logo";
+import HubLogo from "../../components/hub/hublogo";
 
 function AccountPage() {
   return (
-    <>
-      <Logo />
+    <div className="font-family-hub">
+      <HubLogo />
       <main>
         <ModifyAccountForm />
       </main>
-    </>
+    </div>
   );
 }
 

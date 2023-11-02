@@ -1,5 +1,6 @@
-import "../../styles/hub/form.css";
 import ButtonDelete from "./buttondelete";
+
+import "../../styles/hub/hub_form.css";
 
 function ModifyAccountForm() {
   return (

@@ -1,5 +1,5 @@
-import "../../styles/hub/gameselection.css";
 import rblLogo from "../../assets/images/logo_RBL.png";
+import "../../styles/hub/hub_gameselection.css";
 
 function GameSelection() {
   const arrayTest = [

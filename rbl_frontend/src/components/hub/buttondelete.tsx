@@ -1,4 +1,4 @@
-import "../../styles/hub/buttondelete.css";
+import "../../styles/hub/hub_buttondelete.css";
 
 function ButtonDelete() {
   return (

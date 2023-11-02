@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import "../../styles/hub/menu.css";
-import Logo from "./logo";
 import NavBarContext from "../../contexts/hub/NavbarContext";
 import { Link } from "react-router-dom";
+import LogoBurger from "./hublogo";
+import "../../styles/hub/hub_menu.css";
 
 function Menu() {
   const { modalMenu } = useContext(NavBarContext);
@@ -10,7 +10,7 @@ function Menu() {
   return (
     <div className={`menu ${modalMenu ? "menu-show" : null}`}>
       <div className="menu-container">
-        <Logo />
+        <LogoBurger />
         <div className="menu-items">
           {/* TODO : Add the link for the route */}
           <Link to="/statistics" className="statistics">
@@ -18,6 +18,9 @@ function Menu() {
           </Link>
           <Link to="/account" className="account">
             <h3>Account</h3>
+          </Link>
+          <Link to="/tgpq" className="tgpq">
+            <h3>TGPQ</h3>
           </Link>
         </div>
         <div className="logout">

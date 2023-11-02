@@ -1,16 +1,16 @@
 import CreateAccountForm from "../../components/hub/formcreateaccount";
 import Login from "../../components/hub/formlogin";
-import Logo from "../../components/hub/logo";
+import HubLogo from "../../components/hub/hublogo";
 
 function LoginPage() {
   return (
-    <>
-      <Logo />
+    <div className="font-family-hub">
+      <HubLogo />
       <main>
         <Login />
         <CreateAccountForm />
       </main>
-    </>
+    </div>
   );
 }
 

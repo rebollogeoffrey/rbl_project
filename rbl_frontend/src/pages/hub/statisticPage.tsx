@@ -1,14 +1,14 @@
-import Logo from "../../components/hub/logo";
+import HubLogo from "../../components/hub/hublogo";
 import Statistic from "../../components/hub/statistic";
 
 function StatisticPage() {
   return (
-    <>
-      <Logo />
+    <div className="font-family-hub">
+      <HubLogo />
       <main>
         <Statistic />
       </main>
-    </>
+    </div>
   );
 }
 

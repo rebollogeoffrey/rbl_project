@@ -1,14 +1,14 @@
 import GameSelection from "../../components/hub/gameselection";
-import Logo from "../../components/hub/logo";
+import HubLogo from "../../components/hub/hublogo";
 
 function GameSelectionPage() {
   return (
-    <>
-      <Logo />
+    <div className="font-family-hub">
+      <HubLogo />
       <main>
         <GameSelection />
       </main>
-    </>
+    </div>
   );
 }
 

@@ -1,12 +1,12 @@
-import Logo from "../../components/hub/logo";
+import HubLogo from "../../components/hub/hublogo";
 import NavBar from "../../components/hub/navbar";
 
 function LayoutHub() {
   return (
-    <>
+    <div className="font-family-hub">
       <NavBar />
-      <Logo />
-    </>
+      <HubLogo />
+    </div>
   );
 }
 

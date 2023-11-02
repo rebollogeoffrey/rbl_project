@@ -22,13 +22,9 @@
   width: 90%;
   height: 20vh;
   min-height: 150px;
-  padding: 2%;
+  padding: 1%;
   gap: 4%;
   border-radius: 10px;
-}
-
-.selection-game, .selection-game>*, .selection-game>*>* {
-  border: 1px lightseagreen;
 }
 
 /* Games cards image */
@@ -42,29 +38,34 @@
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
-  height: 100%;
-  gap: 5%;
+  height: 83%;
+  margin: auto;
+  gap: 3%;
 }
 
 /* Games cards name */
 .selection-game-name {
   width: fit-content;
+  letter-spacing: 2px;
+  font-size: 1.2em;
 }
 
 
 /* Games cards decription */
 .selection-game-desc {
-  margin-left: 5%;
+  padding: 0.9% 4%;
   text-align: justify;
-  width: 95%;
   height: 100%;
   overflow: auto;
   text-overflow: ellipsis;
   word-wrap: break-word;
   word-wrap: nowrap;
+  border-top: 1px solid var(--DarkestOne);
 }
 
 @media only screen and (min-width: 1080px) {
+
+  /* Games cards container */
   .selection-container {
     flex-direction: row;
     flex-wrap: wrap;
@@ -74,6 +75,7 @@
     justify-content: space-evenly;
   }
 
+  /* Games cards */
   .selection-game {
     margin: 0;
     margin-top: 5vh;
