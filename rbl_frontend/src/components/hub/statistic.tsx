@@ -18,7 +18,9 @@ function Statistic() {
   // ];
 
   {
-    /* TODO : REGARDER GRAPHQL: Permettra de faire simplement la conversation de données */
+    /* TODO : REGARDER GRAPHQL: Permettra de faire simplement la conversation de données
+    
+    TODO : Update le format d'arrivée de stats avec new bdd*/
   }
 
   const userStats = [
