@@ -1,5 +1,5 @@
-import HubLogo from "../../components/hub/hublogo";
-import NavBar from "../../components/hub/navbar";
+import HubLogo from "../../components/hub/hub_logo";
+import NavBar from "../../components/hub/hub_navbar";
 
 function LayoutHub() {
   return (

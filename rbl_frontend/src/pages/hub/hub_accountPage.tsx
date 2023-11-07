@@ -1,5 +1,5 @@
-import ModifyAccountForm from "../../components/hub/formmodifyaccount";
-import HubLogo from "../../components/hub/hublogo";
+import ModifyAccountForm from "../../components/hub/hub_formmodifyaccount";
+import HubLogo from "../../components/hub/hub_logo";
 
 function AccountPage() {
   return (

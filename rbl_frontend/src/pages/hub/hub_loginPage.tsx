@@ -1,6 +1,6 @@
-import CreateAccountForm from "../../components/hub/formcreateaccount";
-import Login from "../../components/hub/formlogin";
-import HubLogo from "../../components/hub/hublogo";
+import CreateAccountForm from "../../components/hub/hub_formcreateaccount";
+import Login from "../../components/hub/hub_formlogin";
+import HubLogo from "../../components/hub/hub_logo";
 
 function LoginPage() {
   return (

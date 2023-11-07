@@ -1,5 +1,5 @@
-import HubLogo from "../../components/hub/hublogo";
-import Statistic from "../../components/hub/statistic";
+import HubLogo from "../../components/hub/hub_logo";
+import Statistic from "../../components/hub/hub_statistic";
 
 function StatisticPage() {
   return (

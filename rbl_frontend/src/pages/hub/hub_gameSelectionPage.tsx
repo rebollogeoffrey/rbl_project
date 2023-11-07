@@ -1,5 +1,5 @@
-import GameSelection from "../../components/hub/gameselection";
-import HubLogo from "../../components/hub/hublogo";
+import GameSelection from "../../components/hub/hub_gameselection";
+import HubLogo from "../../components/hub/hub_logo";
 
 function GameSelectionPage() {
   return (

@@ -1,4 +1,4 @@
-import ButtonDelete from "./buttondelete";
+import ButtonDelete from "./hub_buttondelete";
 
 import "../../styles/hub/hub_form.css";
 
