@@ -5,7 +5,7 @@ import { Person } from './entities/person.entity';
 import { Repository } from 'typeorm';
 import { FightPersonDto } from './dto/fight-person.dto';
 import { PersonModel } from '../personmodel/entities/personmodel.entity';
-import { Stat_affected, Type } from '../item/entities/item.entity';
+import { Stat_affected, Type_item } from '../item/entities/item.entity';
 
 @Injectable()
 export class PersonService {
@@ -53,7 +53,27 @@ export class PersonService {
     return weapon ? strength + weapon.damage : strength;
   }
 
-  async fight(
+  private isDexteritySuccess(value) {
+    const random = Math.random() * 100;
+    return random <= value ? true : false;
+  }
+
+  private isDodgeSuccess(value) {
+    const random = Math.random() * 100;
+    return random <= value ? true : false;
+  }
+
+  private isAttackSuccess(dod, dex) {
+    let dodge;
+    let dexterity;
+    do {
+      dodge = this.isDodgeSuccess(dod);
+      dexterity = this.isDexteritySuccess(dex);
+    } while ((dodge && dexterity) || (!dodge && !dexterity));
+    return dex;
+  }
+
+  async battle(
     hero: FightPersonDto,
     // monster: FightPersonModelDto
   ) {
@@ -61,27 +81,44 @@ export class PersonService {
     let itemDexterityValue = 0;
     let itemDodgeValue = 0;
     let itemHealthValue = 0;
+
     hero.items.map((item) => {
-      // if (item.type !== Type.POTION) {
-      if (item.stat_affected === Stat_affected.STRENGTH) {
-        itemStrengthValue = itemStrengthValue + item.value;
+      if (item.type !== Type_item.POTION) {
+        if (item.stat_affected === Stat_affected.STRENGTH) {
+          itemStrengthValue = itemStrengthValue + item.value;
+        }
+        if (item.stat_affected === Stat_affected.DEXTERITY) {
+          itemDexterityValue = itemDexterityValue + item.value;
+        }
+        if (item.stat_affected === Stat_affected.DODGE) {
+          itemDodgeValue = itemDodgeValue + item.value;
+        }
+        if (item.stat_affected === Stat_affected.HEALTH) {
+          itemHealthValue = itemHealthValue + item.value;
+        }
       }
-      if (item.stat_affected === Stat_affected.DEXTERITY) {
-        itemDexterityValue = itemDexterityValue + item.value;
-      }
-      if (item.stat_affected === Stat_affected.DODGE) {
-        itemDodgeValue = itemDodgeValue + item.value;
-      }
-      if (item.stat_affected === Stat_affected.HEALTH) {
-        itemHealthValue = itemHealthValue + item.value;
-      }
-      // }
     });
-    const attackPoints = this.getDamage(
-      hero.items[0].value,
+
+    const attackPointsHero = this.getDamage(
+      itemStrengthValue,
       hero.personModel.strength,
     );
 
-    return attackPoints;
+    const attackPointsHero = this.getDamage(
+      itemStrengthValue,
+      hero.personModel.strength,
+    );
+
+    const attackPointsHero = this.getDamage(
+      itemStrengthValue,
+      hero.personModel.strength,
+    );
+
+    const attackPointsHero = this.getDamage(
+      itemStrengthValue,
+      hero.personModel.strength,
+    );
+
+    return 'Nouveau PV Hero, Nouveau PV Monstre, Montant Attaque Hero, Attaque Hero Touche?, Montant Atatque Monstre, Attaque Monster Touche?';
   }
 }
