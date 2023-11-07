@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import "../styles/App.css";
-import Footer from "../components/common/common_footer";
+import Footer from "../components/general/general_footer";
 import NavBar from "../components/hub/hub_navbar";
 
 import NavBarContext from "../contexts/hub/NavbarContext";
