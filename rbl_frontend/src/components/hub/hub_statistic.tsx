@@ -25,13 +25,34 @@ function Statistic() {
 
   const userStats = [
     {
-      game: "TGPQ",
+      game: "The Great Peasant's Quest",
       nbWin: 2,
       nbLose: 1,
       gameStats: [
         { name: "Wolf", value: 25 },
         { name: "Golem", value: 8 },
         { name: "Blob", value: 11 },
+        { name: "Revengeful Ex-Partner", value: 6 },
+        { name: "Golem", value: 8 },
+        { name: "Blob", value: 11 },
+        { name: "Revengeful Ex-Partner", value: 6 },
+        { name: "Golem", value: 8 },
+        { name: "Blob", value: 11 },
+        { name: "Ex-Partner", value: 6 },
+        { name: "Golem", value: 8 },
+        { name: "Blob", value: 11 },
+        { name: "Revengeful Ex-Partner", value: 6 },
+        { name: "Golem", value: 8 },
+        { name: "Blob", value: 11 },
+        { name: "Revengeful Ex-Partner", value: 6 },
+        { name: "Blue golem", value: 8 },
+        { name: "Blob", value: 11 },
+        { name: "Revengeful Ex-Partner", value: 6 },
+        { name: "Golem", value: 8 },
+        { name: "Blob", value: 11 },
+        { name: "Revengeful Ex-Partner", value: 6 },
+        { name: "Golem", value: 8 },
+        { name: "Blob master", value: 11 },
         { name: "Revengeful Ex-Partner", value: 6 },
       ],
     },
@@ -45,7 +66,7 @@ function Statistic() {
       ],
     },
     {
-      game: "Pouet",
+      game: "Poulet vengeur",
       nbWin: 22,
       nbLose: 9,
       gameStats: [
@@ -54,7 +75,7 @@ function Statistic() {
       ],
     },
     {
-      game: "Patata",
+      game: "Patata Banana",
       nbWin: 1,
       nbLose: 999,
       gameStats: [
@@ -75,32 +96,25 @@ function Statistic() {
     <div className="stat">
       <h1>Statistics</h1>
       <div className="stat-container">
-        {userStats.map((data) => {
+        {userStats.map((data, index) => {
           return (
-            <div className={`stat-game border-${data.game}`}>
+            <div className={`stat-game border-${index}`}>
               <h2>{data.game}</h2>
-              <ul>
-                <li className="stat-game-item">
-                  {" "}
-                  PLAYED : {data.nbWin + data.nbLose}
-                </li>
-                <li className="stat-game-item"> WIN : {data.nbWin}</li>
-                <li className="stat-game-item"> LOSE : {data.nbLose}</li>
-                {data.gameStats.map((stat) => {
-                  if (data.game === "TGPQ") {
+              <ul className="stat-game-list">
+                <span className="stat-game-list-firstThree">
+                  <li> PLAYED : {data.nbWin + data.nbLose}</li>
+                  <li> WIN : {data.nbWin}</li>
+                  <li> LOSE : {data.nbLose}</li>
+                </span>
+                <span className="stat-game-list-rest">
+                  {data.gameStats.map((stat) => {
                     return (
-                      <li className="stat-game-item">
-                        {stat.name} KILLED : {stat.value}
-                      </li>
-                    );
-                  } else {
-                    return (
-                      <li className="stat-game-item">
+                      <li>
                         {stat.name} : {stat.value}
                       </li>
                     );
-                  }
-                })}
+                  })}
+                </span>
               </ul>
             </div>
           );
