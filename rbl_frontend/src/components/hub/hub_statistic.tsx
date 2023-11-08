@@ -33,31 +33,13 @@ function Statistic() {
         { name: "Golem", value: 8 },
         { name: "Blob", value: 11 },
         { name: "Revengeful Ex-Partner", value: 6 },
-        { name: "Golem", value: 8 },
-        { name: "Blob", value: 11 },
-        { name: "Revengeful Ex-Partner", value: 6 },
-        { name: "Golem", value: 8 },
-        { name: "Blob", value: 11 },
         { name: "Ex-Partner", value: 6 },
-        { name: "Golem", value: 8 },
-        { name: "Blob", value: 11 },
-        { name: "Revengeful Ex-Partner", value: 6 },
-        { name: "Golem", value: 8 },
-        { name: "Blob", value: 11 },
-        { name: "Revengeful Ex-Partner", value: 6 },
         { name: "Blue golem", value: 8 },
-        { name: "Blob", value: 11 },
-        { name: "Revengeful Ex-Partner", value: 6 },
-        { name: "Golem", value: 8 },
-        { name: "Blob", value: 11 },
-        { name: "Revengeful Ex-Partner", value: 6 },
-        { name: "Golem", value: 8 },
-        { name: "Blob master", value: 11 },
-        { name: "Revengeful Ex-Partner", value: 6 },
+        { name: "Blob master", value: 7 },
       ],
     },
     {
-      game: "Lootery",
+      game: "Lootery-'_\"^¨$*µ£&é\"'(-è_çà=+´~#{[|`^@]}",
       nbWin: 1,
       nbLose: 0,
       gameStats: [
@@ -96,9 +78,15 @@ function Statistic() {
     <div className="stat">
       <h1>Statistics</h1>
       <div className="stat-container">
-        {userStats.map((data, index) => {
+        {userStats.map((data) => {
           return (
-            <div className={`stat-game border-${index}`}>
+            // replace all non-alphanumeric characters with an empty string and take the first 8 characters of each game's name
+            <div
+              className={`stat-game border-${data.game
+                .replace(/[^a-zA-Z0-9]/g, "")
+                .toLowerCase()
+                .substring(0, 8)}`}
+            >
               <h2>{data.game}</h2>
               <ul className="stat-game-list">
                 <span className="stat-game-list-firstThree">

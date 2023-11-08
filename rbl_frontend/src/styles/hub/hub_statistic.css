@@ -25,52 +25,52 @@
 
 /* Card Border color by index */
 /* ---> Game : The Great Peasant's Quest */
-.border-0 {
+.border-thegreat {
   border-radius: 20px;
   border: 5px solid var(--GameTGPQ);
 }
 
-.border-0>h2 {
+.border->h2 {
   border-bottom: 3px solid var(--GameTGPQ);
 }
 
 /* ---> Game : Lootery */
-.border-1 {
+.border-lootery {
   border-radius: 20px;
   border: 5px solid var(--GameLootery);
 }
 
-.border-1>h2 {
+.border-lootery>h2 {
   border-bottom: 3px solid var(--GameLootery);
 }
 
 /* ---> Game : Poulet vengeur */
-.border-2 {
+.border-pouletve {
   border-radius: 20px;
   border: 5px solid var(--DarkRed);
 }
 
-.border-2>h2 {
+.border-pouletve>h2 {
   border-bottom: 3px solid var(--DarkRed);
 }
 
 /* ---> Game : Patata Banana*/
-.border-3 {
+.border-patataba {
   border-radius: 20px;
   border: 5px solid var(--Golden);
 }
 
-.border-3>h2 {
+.border-patataba>h2 {
   border-bottom: 3px solid var(--Golden);
 }
 
 /* ---> Game : Mount */
-.border-4 {
+.border-mount {
   border-radius: 20px;
   border: 5px solid var(--DarkBlue);
 }
 
-.border-4>h2 {
+.border-mount>h2 {
   border-bottom: 3px solid var(--DarkBlue);
 }
 
