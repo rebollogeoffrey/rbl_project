@@ -2,7 +2,7 @@ import "../../styles/hub/hub_form.css";
 
 function CreateAccountForm() {
   return (
-    <div className="form-container container-create">
+    <div className="container-create">
       <h1> New Player ? </h1>
       <h2> Come Here! </h2>
       <form className="form-create">

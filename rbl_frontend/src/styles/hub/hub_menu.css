@@ -12,9 +12,18 @@
   border-bottom-right-radius: 20px;
   left: -500px;
   overflow-x: hidden;
+  overflow-y: scroll;
   background-color: var(--NearBlack);
-  padding-top: 4rem;
   transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+.menu * {
+  text-decoration: none;
+
 }
 
 .menu-show {
@@ -32,20 +41,17 @@
   height: 100%;
 }
 
-.menu-items {
+.menu-items * {
   display: flex;
   flex-direction: column;
-  font-size: 200%;
-}
-
-.menu-items>a,
-.logout {
-  text-decoration: none;
-  margin: 10%;
+  justify-content: space-between;
+  font-size: 150%;
+  margin: 10% 0;
+  cursor: pointer;
 }
 
 .logout>a {
   text-shadow: 0 0 5px var(--MediumRed);
   text-decoration: none;
-  font-size: 170%;
+  font-size: 150%;
 }

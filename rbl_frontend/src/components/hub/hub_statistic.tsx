@@ -48,6 +48,12 @@ function Statistic() {
       ],
     },
     {
+      game: "Mount-'_\"^¨$*µ £&é\"'(-è_     çà=+´~#{[|`^@]}",
+      nbWin: 1,
+      nbLose: 1,
+      gameStats: [],
+    },
+    {
       game: "Poulet vengeur",
       nbWin: 22,
       nbLose: 9,
@@ -65,12 +71,6 @@ function Statistic() {
         { name: "Coke", value: 3 },
         { name: "Alcohol", value: 68852 },
       ],
-    },
-    {
-      game: "Mount",
-      nbWin: 1,
-      nbLose: 1,
-      gameStats: [],
     },
   ];
 

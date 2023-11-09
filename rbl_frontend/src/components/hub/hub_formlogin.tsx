@@ -2,7 +2,7 @@ import "../../styles/hub/hub_form.css";
 
 function Login() {
   return (
-    <div className="form-container container-login">
+    <div className="container-login">
       <h1> Login </h1>
       <form className="form-login">
         <label>Email</label>

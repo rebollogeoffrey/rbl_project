@@ -4,7 +4,7 @@ import "../../styles/hub/hub_form.css";
 
 function ModifyAccountForm() {
   return (
-    <div className="form-container container-modify">
+    <div className="container-modify">
       <h1> Your account </h1>
       <form className="form-modify">
         <label>Username</label>
