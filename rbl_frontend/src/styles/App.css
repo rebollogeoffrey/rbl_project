@@ -2,13 +2,37 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Global";
   color: var(--LightestOne);
+}
+
+.font-family-hub, .font-family-hub * {
+  font-family: "Hub", Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 1px;
+}
+
+.font-family-tgpq-regular, .font-family-tgpq-regular * {
+  font-family: "Tgpq-regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: larger;
+}
+
+.font-family-tgpq-bold, .font-family-tgpq-bold * {
+  font-family: "Tgpq-bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: larger;
+}
+
+.bg-tgpq-home {
+  background-image: url("../assets/images/tgpq/tgpq_bg_home.jpg");
+  background-size: cover;
+}
+
+.bg-tgpq-tavern {
+  background-image: url("../assets/images/tgpq/tgpq_bg_tavern.jpg");
+  background-size: cover;
 }
 
 body {
   background-color: var(--NearBlack);
-  background-image: url("../assets/images/bg_hub.jpg");
+  background-image: url("../assets/images/hub/bg_hub.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +46,19 @@ body {
 }
 
 @font-face {
-  font-family: "Global";
+  font-family: "Hub";
   src: local("Langar-Regular"),
-    url("../assets/fonts/Langar/Langar-Regular.ttf") format("truetype");
+    url("../assets/fonts/hub/Langar/Langar-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Tgpq-regular";
+  src: local("KleeOne-Regular"),
+    url("../assets/fonts/tgpq/Klee_One/KleeOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Tgpq-bold";
+  src: local("KleeOne-Bold"),
+    url("../assets/fonts/tgpq/Klee_One/KleeOne-SemiBold.ttf") format("truetype");
 }

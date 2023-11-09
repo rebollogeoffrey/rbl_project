@@ -1,0 +1,96 @@
+.stat.container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: end;
+  justify-content: space-evenly;
+}
+
+/* Card */
+.stat-game {
+  margin: 0 5% 5% 5%;
+  height: fit-content;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  outline: 2px solid var(--NearWhite);
+  outline-offset: 1px;
+}
+
+/* Card Border color by index */
+/* ---> Game : The Great Peasant's Quest */
+.border-thegreat, .border-thegreat>h2 {
+  border: 5px solid var(--GameTGPQ);
+}
+
+/* ---> Game : Lootery */
+.border-lootery, .border-lootery>h2 {
+  border: 5px solid var(--GameLootery);
+}
+
+/* ---> Game : Poulet vengeur */
+.border-pouletve, .border-pouletve>h2 {
+  border: 5px solid var(--MediumRed);
+}
+
+/* ---> Game : Patata Banana*/
+.border-patataba, .border-patataba>h2 {
+  border: 5px solid var(--Golden);
+}
+
+/* ---> Game : Mount */
+.border-mount, .border-mount>h2 {
+  border: 5px solid var(--DarkBlue);
+}
+
+/* Card Title */
+.stat-game>h2 {
+  text-align: center;
+  padding: 2% 5% 0 5%;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+/* Card items of list */
+.stat-game-list>li, .stat-game-list>span>li {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 2% 5%;
+}
+
+/* Card items */
+.stat-game-list-firstThree, .stat-game-list-rest {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding-top: 2%;
+}
+
+.stat-game-list-rest>li {
+  width: 50%;
+}
+
+@media only screen and (min-width: 800px) {
+  .stat-game {
+    width: 40%;
+  }
+
+  .stat {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-container {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+}

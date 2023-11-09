@@ -2,13 +2,11 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  ManyToOne,
   CreateDateColumn,
   UpdateDateColumn,
   ManyToMany,
 } from 'typeorm';
-import { Game } from '../../game/entities/game.entity';
-import { Inventory } from '../../inventory/entities/inventory.entity';
+import { Person } from '../../person/entities/person.entity';
 
 export enum Stat_affected {
   DEXTERITY = 'Dexterity',
@@ -66,6 +64,13 @@ export class Item {
   stat_affected: Stat_affected;
 
   @Column({
+    type: 'int',
+    comment: 'Value of the stat_affected',
+    default: 0,
+  })
+  value: number;
+
+  @Column({
     type: 'enum',
     nullable: false,
     comment: 'Define what is the item',
@@ -88,9 +93,6 @@ export class Item {
   updated_at: Date;
 
   // --------------RELATIONS
-  @ManyToOne(() => Game, (game) => game.items)
-  game: Game;
-
-  @ManyToMany(() => Inventory, (inventories) => inventories.items)
-  inventories: Inventory[];
+  @ManyToMany(() => Person, (person) => person.items)
+  inventories: Person[];
 }

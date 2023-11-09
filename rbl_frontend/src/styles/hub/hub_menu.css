@@ -1,0 +1,57 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  height: 100%;
+  width: 30%;
+  min-width: 300px;
+  position: fixed;
+  z-index: 8;
+  top: 0;
+  border-bottom-right-radius: 20px;
+  left: -500px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: var(--NearBlack);
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+.menu * {
+  text-decoration: none;
+
+}
+
+.menu-show {
+  left: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.menu-items * {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 150%;
+  margin: 10% 0;
+  cursor: pointer;
+}
+
+.logout>a {
+  text-shadow: 0 0 5px var(--MediumRed);
+  text-decoration: none;
+  font-size: 150%;
+}
