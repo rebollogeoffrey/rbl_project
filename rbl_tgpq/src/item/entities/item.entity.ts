@@ -58,8 +58,8 @@ export class Item {
     type: 'enum',
     nullable: false,
     comment: 'Define what is affected by the item',
-    default: Stat_affected.NOTHING,
     enum: Stat_affected,
+    default: Stat_affected.NOTHING,
   })
   stat_affected: Stat_affected;
 

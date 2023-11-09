@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+  database:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    env_file: .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+    entrypoint: sh -c "
+      echo 'CREATE DATABASE IF NOT EXISTS db_rbl_user; CREATE DATABASE IF NOT EXISTS db_rbl_tgpq;' > /docker-entrypoint-initdb.d/init.sql;
+      /usr/local/bin/docker-entrypoint.sh --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci"
+    networks:
+      - rbl_network
+    volumes:
+      - ./data/:/var/lib/mysql/
+    ports:
+      - 3306:3306
+
+  frontend:
+    build: ./rbl_frontend
+    ports:
+      - "80:5173"
+    environment:
+      BACKEND_USER_URL: "http://localhost:8063"
+      BACKEND_TGPQ_URL: "http://localhost:8261"
+
+  tgpq:
+    build: ./rbl_tgpq
+    ports:
+      - 8261:3261
+    networks:
+      - rbl_network
+    depends_on:
+      - database
+
+  user:
+    build: ./rbl_user
+    ports:
+      - 8063:3063
+    networks:
+      - rbl_network
+    depends_on:
+      - database
+
+networks:
+  rbl_network:
