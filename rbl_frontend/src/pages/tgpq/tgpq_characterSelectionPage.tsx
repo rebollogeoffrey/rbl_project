@@ -7,7 +7,7 @@ function CharacterSelectionPage() {
     <div className="font-family-tgpq-regular bg-tgpq-tavern">
       <TGPQChaSelTitle />
       <TGPQChaSelCards />
-      <TGPQButtonNext />
+      <TGPQButtonNext path="/hub" />
     </div>
   );
 }

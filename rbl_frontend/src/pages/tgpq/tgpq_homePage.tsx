@@ -2,7 +2,6 @@ import TGPQDescription from "../../components/tgpq/tgpq_description";
 import TGPQTitle from "../../components/tgpq/tgpq_title";
 import TGPQLogo from "../../components/tgpq/tgpq_logo";
 import TGPQButtonNext from "../../components/tgpq/tgpq_buttonnext";
-import { Link } from "react-router-dom";
 
 function TGPQHomePage() {
   return (
@@ -10,9 +9,7 @@ function TGPQHomePage() {
       <TGPQTitle />
       <TGPQLogo />
       <TGPQDescription />
-      <Link to="/selectCharacter">
-        <TGPQButtonNext />
-      </Link>
+      <TGPQButtonNext path="/selectCharacter" />
     </div>
   );
 }
