@@ -1,5 +1,5 @@
-import { Item } from 'src/item/entities/item.entity';
-import { Personnage } from 'src/personnage/entities/personnage.entity';
+import { Item } from '../../item/entities/item.entity';
+import { PersonModel } from '../../personmodel/entities/personmodel.entity';
 import {
   Column,
   CreateDateColumn,
@@ -10,7 +10,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-export class Inventory {
+export class Person {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -21,6 +21,18 @@ export class Inventory {
   })
   gold: number;
 
+  @Column({
+    type: 'int',
+    unique: false,
+    default: 100,
+  })
+  health: number;
+
+  @Column({
+    type: 'string',
+    unique: false,
+  })
+  userId: string;
   // --------------TIMESTAMPS
   @CreateDateColumn({
     type: 'timestamp',
@@ -41,6 +53,6 @@ export class Inventory {
   @JoinTable()
   items: Item[];
 
-  @ManyToOne(() => Personnage, (personnage) => personnage.inventories)
-  personnage: Personnage;
+  @ManyToOne(() => PersonModel, (personModel) => personModel.persons)
+  personModel: PersonModel;
 }

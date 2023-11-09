@@ -2,13 +2,9 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  ManyToOne,
-  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Game } from '../../game/entities/game.entity';
-import { Personnage } from 'src/personnage/entities/personnage.entity';
 
 @Entity()
 export class Statistic {
@@ -19,7 +15,25 @@ export class Statistic {
     type: 'int',
     default: 0,
   })
-  nb_killed: number;
+  nb_win: number;
+
+  @Column({
+    type: 'int',
+    default: 0,
+  })
+  nb_lose: number;
+
+  @Column({
+    type: 'array',
+    default: 0,
+  })
+  kills: Array<{ category: string; nb_killed: number }>;
+
+  @Column({
+    type: 'string',
+    default: 0,
+  })
+  userId: string;
 
   // --------------TIMESTAMPS
   @CreateDateColumn({
@@ -34,11 +48,4 @@ export class Statistic {
     onUpdate: 'CURRENT_TIMESTAMP(6)',
   })
   updated_at: Date;
-
-  // --------------RELATIONS
-  @ManyToOne(() => Game, (game) => game.statistics)
-  game: Game;
-
-  @OneToMany(() => Personnage, (personnages) => personnages.statistic)
-  personnages: Personnage[];
 }

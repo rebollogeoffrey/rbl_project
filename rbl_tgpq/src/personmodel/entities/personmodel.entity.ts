@@ -2,14 +2,11 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  ManyToOne,
   CreateDateColumn,
   UpdateDateColumn,
   OneToMany,
 } from 'typeorm';
-import { Game } from '../../game/entities/game.entity';
-import { Statistic } from 'src/statistic/entities/statistic.entity';
-import { Inventory } from 'src/inventory/entities/inventory.entity';
+import { Person } from '../../person/entities/person.entity';
 
 export enum Category {
   ANIMATE = 'Animate',
@@ -28,7 +25,7 @@ export enum Category {
 }
 
 @Entity()
-export class Personnage {
+export class PersonModel {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -37,7 +34,7 @@ export class Personnage {
     length: 80,
     nullable: false,
     unique: false,
-    comment: "Personnage's name",
+    comment: "PersonModel's name",
   })
   name: string;
 
@@ -53,7 +50,7 @@ export class Personnage {
     type: 'int',
     unique: false,
     nullable: true,
-    comment: 'Strength is used to calculate damage this personnage deal',
+    comment: 'Strength is used to calculate damage this PersonModel deal',
   })
   strength: number;
 
@@ -97,14 +94,14 @@ export class Personnage {
     nullable: true,
     default: 1,
     comment:
-      'Difficulty is used to sort personnage by their difficulty to be beaten',
+      'Difficulty is used to sort PersonModel by their difficulty to be beaten',
   })
   difficulty: number;
 
   @Column({
     type: 'enum',
     nullable: false,
-    comment: 'Category of personnage',
+    comment: 'Category of PersonModel',
   })
   category: Category;
 
@@ -123,12 +120,6 @@ export class Personnage {
   updated_at: Date;
 
   // --------------RELATIONS
-  @ManyToOne(() => Game, (game) => game.personnages)
-  game: Game;
-
-  @ManyToOne(() => Statistic, (statistic) => statistic.personnages)
-  statistic: Statistic;
-
-  @OneToMany(() => Inventory, (inventory) => inventory.personnage)
-  inventories: Inventory[];
+  @OneToMany(() => Person, (person) => person.personModel)
+  persons: Person[];
 }
