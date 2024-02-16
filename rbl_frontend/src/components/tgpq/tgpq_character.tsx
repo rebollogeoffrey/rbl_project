@@ -2,9 +2,14 @@ import CharacterImg from "../../assets/images/tgpq/tgpq_character_rogue.webp";
 import "../../styles/tgpq/tgpq_character.css";
 
 function TGPQCharacter() {
+  // TODO : Handle category to check if only heroes appear in the list but for now only one hero available
+
+  // TODO : Handle character info when bdd filled and linked
   const characters = [
-    { name: "Peasant Roger", imageurl: "tgpq_character_rogue.webp" },
-    { name: "Peasant Goeffrey", imageurl: "tgpq_character_rogue.webp" },
+    {
+      name: "Peasant Roger",
+      imageurl: CharacterImg,
+    },
   ];
   return (
     <>
@@ -12,9 +17,7 @@ function TGPQCharacter() {
         {characters[0].name}
       </h3>
       <img
-        // TODO : Handle img when bdd filled
-        // src={`${characters[0].imageurl}`}
-        src={CharacterImg}
+        src={characters[0].imageurl}
         alt={characters[0].name}
         className="tgpq-character-selected-img"
       />

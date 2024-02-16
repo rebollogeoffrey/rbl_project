@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+
+:root {
+    --heart-size: 18px;
+}
+
+.heart {
+    height: var(--heart-size);
+    width: var(--heart-size);
+    background: var(--GameTGPQ);
+    border-radius: 5px;
+    position: relative;
+    margin: auto;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+
+.heart::before {
+    background-color: var(--GameTGPQ);
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: var(--heart-size);
+    height: var(--heart-size);
+    top: calc(-0.5*var(--heart-size));
+    left: 0px;
+
+}
+
+.heart::after {
+    background-color: var(--GameTGPQ);
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: var(--heart-size);
+    height: var(--heart-size);
+    top: 0px;
+    left: calc(var(--heart-size)/2);
+
+}
