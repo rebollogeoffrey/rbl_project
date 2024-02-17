@@ -9,11 +9,11 @@ Stop the services or applications which are currently using :
 
 To stop them open the cmd and write :
 
-- `service stop NAME ` (replace NAME with the name of the service).
+- `systemctl stop NAME ` (replace NAME with the name of the service).
 
 For example :
 
-> `service stop mysql`
+> `systemctl stop mysql` > `systemctl stop apache2`
 
 ## Remove all images not usefull
 

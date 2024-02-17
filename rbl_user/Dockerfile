@@ -14,5 +14,10 @@ RUN npm i
 # Copy all and paste it in the /app
 COPY . .
 
+# Includes wait-for-it.sh and docker-entrypoint.sh
+RUN chmod +x ./wait-for-it.sh ./docker-entrypoint.sh
+RUN apk update && apk add bash
+
 # Start the project
+ENTRYPOINT ["sh","./docker-entrypoint.sh"]
 CMD npm start
