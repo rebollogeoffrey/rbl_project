@@ -8,6 +8,7 @@ import {
   Delete,
   // UseGuards,
   Put,
+  Request,
 } from '@nestjs/common';
 
 // Service
@@ -48,6 +49,12 @@ export class UserController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.userService.findById(id);
+  }
+
+  // @UseGuards(AuthGuard('jwt'))
+  @Get('profile')
+  getUserId(@Request() req: any) {
+    return req.user.id;
   }
 
   // @UseGuards(AuthGuard('jwt'))

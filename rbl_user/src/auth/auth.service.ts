@@ -46,7 +46,7 @@ export class AuthService {
 
       // User found
       // The access token will be composed by the email
-      const payload = `${userData.email}`;
+      const payload = `${(userData.id, userData.email)}`;
       const accessToken = this.jwtService.sign(payload);
 
       return {
