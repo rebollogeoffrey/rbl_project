@@ -25,7 +25,11 @@ export class PersonModelService {
     });
   }
 
-  async update(updatePersonModelDto): Promise<PersonModel | undefined> {
+  async update(
+    idPersonModel,
+    updatePersonModelDto,
+  ): Promise<PersonModel | undefined> {
+    updatePersonModelDto = [...idPersonModel, ...updatePersonModelDto];
     return this.personModelRepository.save(updatePersonModelDto);
   }
 

@@ -26,17 +26,20 @@ export class PersonController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.personService.findOne(+id);
+  findById(@Param('id') id: string) {
+    return this.personService.findById(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePersonDto: UpdatePersonDto) {
-    return this.personService.update(+id, updatePersonDto);
+  update(
+    @Param('id') idPerson: string,
+    @Body() updatePersonDto: UpdatePersonDto,
+  ) {
+    return this.personService.update(idPerson, updatePersonDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.personService.remove(+id);
+    return this.personService.remove(id);
   }
 }

@@ -1,3 +1,4 @@
+import { UpdatePersonDto } from './dto/update-person.dto';
 import { Injectable } from '@nestjs/common';
 import { CreatePersonDto } from './dto/create-person.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -30,8 +31,9 @@ export class PersonService {
     });
   }
 
-  async update(updatePersonDto): Promise<Person | undefined> {
-    return this.personRepository.save(updatePersonDto);
+  async update(idPerson: string, UpdatePersonDto: UpdatePersonDto) {
+    const updatePerson = { idPerson, ...UpdatePersonDto };
+    return this.personRepository.save(updatePerson);
   }
 
   async remove(id: string) {
@@ -49,23 +51,23 @@ export class PersonService {
     return this.personRepository.save({ id: personId, gold });
   }
 
-  private getDamage(weapon, strength) {
-    return weapon ? strength + weapon.damage : strength;
+  private getDamage(strength: number, weapon?: number) {
+    return weapon ? strength + weapon : strength;
   }
 
-  private isDexteritySuccess(value) {
+  private isDexteritySuccess(value: number) {
     const random = Math.random() * 100;
     return random <= value ? true : false;
   }
 
-  private isDodgeSuccess(value) {
+  private isDodgeSuccess(value: number) {
     const random = Math.random() * 100;
     return random <= value ? true : false;
   }
 
-  private isAttackSuccess(dod, dex) {
-    let dodge;
-    let dexterity;
+  private isAttackSuccess(dod: number, dex: number) {
+    let dodge: boolean;
+    let dexterity: boolean;
     do {
       dodge = this.isDodgeSuccess(dod);
       dexterity = this.isDexteritySuccess(dex);
@@ -73,10 +75,8 @@ export class PersonService {
     return dex;
   }
 
-  async battle(
-    hero: FightPersonDto,
-    // monster: FightPersonModelDto
-  ) {
+  async battle(hero: FightPersonDto, monster: FightPersonDto, mode: boolean) {
+    // if mode true : fight else defend
     let itemStrengthValue = 0;
     let itemDexterityValue = 0;
     let itemDodgeValue = 0;
@@ -100,25 +100,49 @@ export class PersonService {
     });
 
     const attackPointsHero = this.getDamage(
-      itemStrengthValue,
       hero.personModel.strength,
+      itemStrengthValue,
     );
 
-    const attackPointsHero = this.getDamage(
-      itemStrengthValue,
-      hero.personModel.strength,
+    const attackPointsMonster = this.getDamage(monster.personModel.strength);
+
+    const attackHeroSuccess = this.isAttackSuccess(
+      monster.personModel.dodge,
+      hero.personModel.dexterity + itemDexterityValue,
     );
 
-    const attackPointsHero = this.getDamage(
-      itemStrengthValue,
-      hero.personModel.strength,
+    const attackMonsterSuccess = this.isAttackSuccess(
+      mode
+        ? hero.personModel.dodge + itemDodgeValue + 10
+        : hero.personModel.dodge + itemDodgeValue,
+      monster.personModel.dexterity,
     );
 
-    const attackPointsHero = this.getDamage(
-      itemStrengthValue,
-      hero.personModel.strength,
-    );
+    const newHealthHero = attackMonsterSuccess
+      ? hero.health - attackPointsMonster
+      : hero.health;
 
-    return 'Nouveau PV Hero, Nouveau PV Monstre, Montant Attaque Hero, Attaque Hero Touche?, Montant Atatque Monstre, Attaque Monster Touche?';
+    const newHealthMonster = attackHeroSuccess
+      ? monster.health - attackPointsHero
+      : monster.health;
+
+    return mode
+      ? [
+          newHealthHero,
+          newHealthMonster,
+          attackPointsHero,
+          attackPointsMonster,
+          attackHeroSuccess,
+          attackMonsterSuccess,
+        ]
+      : [
+          newHealthHero,
+          monster.health,
+          attackPointsMonster,
+          attackHeroSuccess,
+          attackMonsterSuccess,
+        ];
   }
+
+  async heroDead() {}
 }

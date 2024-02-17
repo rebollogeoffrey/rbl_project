@@ -11,7 +11,7 @@ import { PersonModelService } from './personmodel.service';
 import { CreatePersonModelDto } from './dto/create-personmodel.dto';
 import { UpdatePersonModelDto } from './dto/update-personmodel.dto';
 
-@Controller('PersonModel')
+@Controller('personmodel')
 export class PersonModelController {
   constructor(private readonly personModelService: PersonModelService) {}
 
@@ -26,20 +26,20 @@ export class PersonModelController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.personModelService.findOne(+id);
+  findById(@Param('id') id: string) {
+    return this.personModelService.findById(id);
   }
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id') idPersonModel: string,
     @Body() updatePersonModelDto: UpdatePersonModelDto,
   ) {
-    return this.personModelService.update(+id, updatePersonModelDto);
+    return this.personModelService.update(idPersonModel, updatePersonModelDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.personModelService.remove(+id);
+    return this.personModelService.remove(id);
   }
 }
