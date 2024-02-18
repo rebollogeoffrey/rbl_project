@@ -30,6 +30,11 @@
   background-size: cover;
 }
 
+.bg-tgpq-map {
+  background-image: url("../assets/images/tgpq/tgpq_bg_map.png");
+  background-size: cover;
+}
+
 body {
   background-color: var(--NearBlack);
   background-image: url("../assets/images/hub/bg_hub.jpg");

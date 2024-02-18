@@ -1,0 +1,59 @@
+.tgpq_map {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 10% 0;
+
+}
+
+.tgpq_map_place {
+    width: 100px;
+    height: 100px;
+    margin: 1%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.tgpq_map_place img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* Each place has a different location */
+.tgpq_map .tgpq_map_place:first-child {
+    left: 35%;
+}
+
+.tgpq_map .tgpq_map_place:nth-child(2) {
+    right: 30%;
+}
+
+.tgpq_map .tgpq_map_place:nth-child(3) {
+    left: 25%;
+}
+
+.tgpq_map .tgpq_map_place:nth-child(4) {
+    right: 20%
+}
+
+/* TODO : Add a disabled state to the places non clickable in the array order */
+.tgpq_map .tgpq_map_place .disabled {
+    pointer-events: none;
+}
+
+
+.tgpq_map .tgpq_map_place button {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: transparent;
+    border: none;
+}

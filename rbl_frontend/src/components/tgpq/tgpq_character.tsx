@@ -1,5 +1,5 @@
-import CharacterImg from "../../assets/images/tgpq/tgpq_character_rogue.webp";
 import "../../styles/tgpq/tgpq_character.css";
+import CharacterImg from "../../assets/images/tgpq/tgpq_character_rogue.webp";
 
 function TGPQCharacter() {
   // TODO : Handle category to check if only heroes appear in the list but for now only one hero available

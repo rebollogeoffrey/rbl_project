@@ -1,4 +1,4 @@
-const ProgressBar = ({
+function ProgressBar({
   bgColorOuter,
   bgColorInner,
   progress,
@@ -14,7 +14,7 @@ const ProgressBar = ({
   justifyCnt?: string;
   textDisplayed?: string;
   textColor?: string;
-}) => {
+}) {
   const OuterDiv = {
     width: `100%`,
     backgroundColor: bgColorOuter,
@@ -49,6 +49,6 @@ const ProgressBar = ({
       </div>
     </div>
   );
-};
+}
 
 export default ProgressBar;

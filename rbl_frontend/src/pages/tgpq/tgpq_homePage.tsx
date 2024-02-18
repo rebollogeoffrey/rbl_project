@@ -1,4 +1,4 @@
-import TGPQDescription from "../../components/tgpq/tgpq_description";
+import TGPQDescription from "../../components/tgpq/tgpq_homeDescription";
 import TGPQTitle from "../../components/tgpq/tgpq_title";
 import TGPQLogo from "../../components/tgpq/tgpq_logo";
 import TGPQButtonNext from "../../components/tgpq/tgpq_buttonnext";

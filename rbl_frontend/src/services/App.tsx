@@ -13,7 +13,8 @@ import StatisticPage from "../pages/hub/hub_statisticPage";
 import AccountPage from "../pages/hub/hub_accountPage";
 import TGPQHomePage from "../pages/tgpq/tgpq_homePage";
 // import ButtonBackToHub from "../components/games/buttonbacktohub";
-import CharacterSelectionPage from "../pages/tgpq/tgpq_characterSelectionPage";
+import TGPQCharacterSelectionPage from "../pages/tgpq/tgpq_characterSelectionPage";
+import TGPQMapPage from "../pages/tgpq/tgpq_mapPage";
 
 function App() {
   const [modalMenu, setModalMenu] = useState(false);
@@ -41,7 +42,11 @@ function App() {
 
         {/* ----- Routes for TGPQ ----- */}
         <Route path="/tgpq" element={<TGPQHomePage />} />
-        <Route path="/selectCharacter" element={<CharacterSelectionPage />} />
+        <Route path="/map" element={<TGPQMapPage />} />
+        <Route
+          path="/selectCharacter"
+          element={<TGPQCharacterSelectionPage />}
+        />
       </Routes>
       <Footer />
     </NavBarContext.Provider>
