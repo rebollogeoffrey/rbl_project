@@ -7,39 +7,52 @@ import ImgIndia from "../../assets/images/tgpq/tgpq_place_india.png";
 import ImgIsland from "../../assets/images/tgpq/tgpq_place_island.png";
 
 function TGPQMapPlaces() {
+  // WARNING : DO NOT CHANGE THE ORDER OF THESE PLACES, THEY ARE USED FOR THE MAP !!!
+  // WARNING : The FIRST visitable MUST be the LAST place in the array so it can be deleted when visited without changes the places index
   const placesArray = [
     {
-      placeName: "First sign",
-      imageUrl: ImgSign,
-    },
-    {
-      placeName: "Second love",
-      imageUrl: ImgLove,
-    },
-    {
-      placeName: "Third 3rd",
-      imageUrl: ImgThird,
+      placeName: "Fifth Island",
+      imageUrl: ImgIsland,
     },
     {
       placeName: "Fourth India",
       imageUrl: ImgIndia,
     },
     {
-      placeName: "Fifth Island",
-      imageUrl: ImgIsland,
+      placeName: "Third 3rd",
+      imageUrl: ImgThird,
+    },
+    {
+      placeName: "Second love",
+      imageUrl: ImgLove,
+    },
+    {
+      placeName: "First sign",
+      imageUrl: ImgSign,
     },
   ];
 
   return (
     <div className="tgpq_map">
       {placesArray.map((place, index) => {
-        return (
-          <Link to="/map" className="tgpq_map_place">
-            <button className="disabled">
-              <img src={place.imageUrl} alt={place.placeName} />
-            </button>
-          </Link>
-        );
+        // If place is last of array so it's the one player has to visit next, else not clickable
+        if (index === placesArray.length - 1) {
+          return (
+            <Link to="/map" className="tgpq_map_place">
+              <button>
+                <img src={place.imageUrl} alt={place.placeName} />
+              </button>
+            </Link>
+          );
+        } else {
+          return (
+            <Link to="/map" className="tgpq_map_place">
+              <button disabled>
+                <img src={place.imageUrl} alt={place.placeName} />
+              </button>
+            </Link>
+          );
+        }
       })}
     </div>
   );
