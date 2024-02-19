@@ -10,7 +10,7 @@
 
 }
 
-.tgpq_map_place {
+.tgpq_map_location {
     width: 100px;
     height: 100px;
     margin: 1vh 0;
@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.tgpq_map_place button {
+.tgpq_map_location button {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
@@ -29,35 +29,35 @@
     border: none;
 }
 
-.tgpq_map_place button:disabled {
+.tgpq_map_location button:disabled {
     cursor: not-allowed;
 }
 
 
-.tgpq_map_place img {
+.tgpq_map_location img {
     width: 100px;
     height: 100px;
     object-fit: contain;
 }
 
-/* Each place has a different location */
-.tgpq_map_place:nth-child(5) {
+/* Each location has a different location */
+.tgpq_map_location:nth-child(5) {
     left: 35vw;
 }
 
-.tgpq_map_place:nth-child(4) {
+.tgpq_map_location:nth-child(4) {
     right: 30vw;
 }
 
-.tgpq_map_place:nth-child(3) {
+.tgpq_map_location:nth-child(3) {
     left: 25vw;
 }
 
-.tgpq_map_place:nth-child(2) {
+.tgpq_map_location:nth-child(2) {
     right: 20vw
 }
 
-.tgpq_map_place:last-child button {
+.tgpq_map_location:last-child button {
     -webkit-filter: drop-shadow(2px 2px 0 var(--NearBlack)) drop-shadow(-2px -2px 0 var(--NearWhite));
     filter: drop-shadow(2px 2px 0 var(--NearBlack)) drop-shadow(-2px -2px 0 var(--NearWhite));
     cursor: pointer;

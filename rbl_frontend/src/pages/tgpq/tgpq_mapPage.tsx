@@ -1,10 +1,10 @@
-import TGPQMapPlaces from "../../components/tgpq/tgpq_mapPlaces";
+import TGPQMapLocations from "../../components/tgpq/tgpq_mapLocations";
 import "../../styles/App.css";
 
 function TGPQMapPage() {
   return (
     <div className="font-family-tgpq-regular bg-tgpq-map">
-      <TGPQMapPlaces />
+      <TGPQMapLocations />
     </div>
   );
 }
