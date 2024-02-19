@@ -4,7 +4,7 @@ import { CreatePersonDto } from './dto/create-person.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Person } from './entities/person.entity';
 import { Repository } from 'typeorm';
-import { FightPersonDto } from './dto/fight-person.dto';
+// import { FightPersonDto } from './dto/fight-person.dto';
 import { PersonModel } from '../personmodel/entities/personmodel.entity';
 import { Stat_affected, Type_item } from '../item/entities/item.entity';
 
@@ -75,7 +75,14 @@ export class PersonService {
     return dex;
   }
 
-  async battle(hero: FightPersonDto, monster: FightPersonDto, mode: boolean) {
+  async battle(idHero: string, idMonster: string, mode: boolean) {
+    const hero = await this.findById(idHero);
+    const monster = await this.personModelRepository.findOne({
+      where: [{ id: idMonster }],
+    });
+
+    let healthMonster: number = monster.health_max;
+
     // if mode true : fight else defend
     let itemStrengthValue = 0;
     let itemDexterityValue = 0;
@@ -104,10 +111,10 @@ export class PersonService {
       itemStrengthValue,
     );
 
-    const attackPointsMonster = this.getDamage(monster.personModel.strength);
+    const attackPointsMonster = this.getDamage(monster.strength);
 
     const attackHeroSuccess = this.isAttackSuccess(
-      monster.personModel.dodge,
+      monster.dodge,
       hero.personModel.dexterity + itemDexterityValue,
     );
 
@@ -115,21 +122,23 @@ export class PersonService {
       mode
         ? hero.personModel.dodge + itemDodgeValue + 10
         : hero.personModel.dodge + itemDodgeValue,
-      monster.personModel.dexterity,
+      monster.dexterity,
     );
 
     const newHealthHero = attackMonsterSuccess
       ? hero.health - attackPointsMonster
       : hero.health;
 
-    const newHealthMonster = attackHeroSuccess
-      ? monster.health - attackPointsHero
-      : monster.health;
+    healthMonster = attackHeroSuccess
+      ? healthMonster - attackPointsHero
+      : healthMonster;
+
+    this.update(hero.id, { health: newHealthHero });
 
     return mode
       ? [
           newHealthHero,
-          newHealthMonster,
+          healthMonster,
           attackPointsHero,
           attackPointsMonster,
           attackHeroSuccess,
@@ -137,12 +146,30 @@ export class PersonService {
         ]
       : [
           newHealthHero,
-          monster.health,
+          healthMonster,
           attackPointsMonster,
           attackHeroSuccess,
           attackMonsterSuccess,
         ];
   }
 
-  async heroDead() {}
+  private getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  async startBattle(idHero: string, idUser: string) {
+    const hero = await this.findById(idHero);
+
+    const allMonster = this.personModelRepository.findBy({ difficulty: 1 });
+    const oneRandomMonster =
+      allMonster[this.getRandomInt((await allMonster).length)];
+    const monster = await this.create({
+      ...oneRandomMonster,
+      gold: 100,
+      health: oneRandomMonster.health_max,
+      userId: idUser,
+    });
+
+    return [hero, monster];
+  }
 }
