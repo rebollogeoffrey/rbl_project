@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className="footer-constructor">
       <p>Copyright © William BRUNELLE, Geoffrey REBOLLO</p>
-      <p>avec la participation de Diane LE FUR</p>
+      <p>with the participation of Diane LE FUR</p>
     </div>
   );
 }
