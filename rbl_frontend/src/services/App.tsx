@@ -15,6 +15,7 @@ import TGPQHomePage from "../pages/tgpq/tgpq_homePage";
 // import ButtonBackToHub from "../components/games/buttonbacktohub";
 import TGPQCharacterSelectionPage from "../pages/tgpq/tgpq_characterSelectionPage";
 import TGPQMapPage from "../pages/tgpq/tgpq_mapPage";
+import TGPQBattle from "../components/tgpq/tgpq_battle";
 
 function App() {
   const [modalMenu, setModalMenu] = useState(false);
@@ -43,6 +44,7 @@ function App() {
         {/* ----- Routes for TGPQ ----- */}
         <Route path="/tgpq" element={<TGPQHomePage />} />
         <Route path="/map" element={<TGPQMapPage />} />
+        <Route path="/battle" element={<TGPQBattle />} />
         <Route
           path="/selectCharacter"
           element={<TGPQCharacterSelectionPage />}

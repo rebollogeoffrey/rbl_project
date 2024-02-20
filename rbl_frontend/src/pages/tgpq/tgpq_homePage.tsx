@@ -6,7 +6,7 @@ import TGPQButtonNext from "../../components/tgpq/tgpq_buttonnext";
 function TGPQHomePage() {
   return (
     <div className="font-family-tgpq-regular bg-tgpq-home">
-      <TGPQTitle />
+      <TGPQTitle title="The Great's Peasant Quest" />
       <TGPQLogo />
       <TGPQDescription />
       <TGPQButtonNext path="/selectCharacter" />

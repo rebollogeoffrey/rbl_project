@@ -38,7 +38,7 @@ function TGPQMapLocations() {
         // If location is last of array so it's the one player has to visit next, else not clickable
         if (index === locationsArray.length - 1) {
           return (
-            <Link to="/map" className="tgpq_map_location">
+            <Link to="/battle" className="tgpq_map_location">
               <button>
                 <img src={location.imageUrl} alt={location.locationName} />
               </button>
@@ -46,7 +46,7 @@ function TGPQMapLocations() {
           );
         } else {
           return (
-            <Link to="/map" className="tgpq_map_location">
+            <Link to="/battle" className="tgpq_map_location">
               <button disabled>
                 <img src={location.imageUrl} alt={location.locationName} />
               </button>

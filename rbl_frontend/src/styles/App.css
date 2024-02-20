@@ -5,6 +5,7 @@
   color: var(--LightestOne);
 }
 
+/* Font families ------------*/
 .font-family-hub, .font-family-hub * {
   font-family: "Hub", Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 1px;
@@ -20,6 +21,7 @@
   font-size: larger;
 }
 
+/* Background images ------------*/
 .bg-tgpq-home {
   background-image: url("../assets/images/tgpq/tgpq_bg_home.jpg");
   background-size: cover;
