@@ -1,5 +1,5 @@
 /* Cards container */
-.tgpq-chaSel-cards {
+.tgpq-chaCard-body {
     background-color: var(--NearWhite);
     border-radius: 10px;
     margin: 2% 20%;
@@ -8,13 +8,20 @@
 }
 
 /* Each Character's Card */
-.tgpq-chaSel-card {
+.tgpq-chaCard-card {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+
+.tgpq-chaCard-card.column {
+    flex-direction: column;
+}
+
+.tgpq-chaCard-card.row {
+    flex-direction: row;
 }
 
 /* Stats (heart and bars) */
@@ -26,12 +33,16 @@
     align-items: flex-start;
 }
 
+.tgpq-chaCard-card.row .tgpq-character-stats, .tgpq-chaCard-card.row img {
+    width: 50%;
+}
+
 /* Every p of every stats */
 .tgpq-character-stats p {
     color: var(--DarkestOne);
     font-weight: bold;
     padding-right: 10px;
-    font-size: 60%;
+    font-size: 25px;
 }
 
 /* Each progress bar with text */
@@ -49,5 +60,7 @@
 
 /* Only the heart */
 .tgpq-character-stats>.life>div {
-    top: 3px
+    top: 3px;
+    margin-right: 0.2em;
+    margin-left: 0.1em;
 }

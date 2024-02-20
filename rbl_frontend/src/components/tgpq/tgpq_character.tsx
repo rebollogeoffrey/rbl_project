@@ -12,16 +12,11 @@ function TGPQCharacter() {
     },
   ];
   return (
-    <>
-      <h3 className="tgpq-character-selected-name is-visible">
-        {characters[0].name}
-      </h3>
-      <img
-        src={characters[0].imageurl}
-        alt={characters[0].name}
-        className="tgpq-character-selected-img"
-      />
-    </>
+    <img
+      src={characters[0].imageurl}
+      alt={characters[0].name}
+      className="tgpq-character-selected-img"
+    />
   );
 }
 export default TGPQCharacter;

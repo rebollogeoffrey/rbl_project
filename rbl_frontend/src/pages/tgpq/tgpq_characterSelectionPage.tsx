@@ -1,12 +1,12 @@
 import TGPQButtonNext from "../../components/tgpq/tgpq_buttonnext";
-import TGPQChaSelCards from "../../components/tgpq/tgpq_chaSel_cards";
-import TGPQChaSelTitle from "../../components/tgpq/tgpq_chaSel_title";
+import TGPQChaCardBody from "../../components/tgpq/tgpq_chaCard_cardBody";
+import TGPQChaCardTitle from "../../components/tgpq/tgpq_chaCard_title";
 
 function TGPQCharacterSelectionPage() {
   return (
     <div className="font-family-tgpq-regular bg-tgpq-tavern">
-      <TGPQChaSelTitle />
-      <TGPQChaSelCards />
+      <TGPQChaCardTitle title="Select your character" />
+      <TGPQChaCardBody />
       <TGPQButtonNext path="/map" />
     </div>
   );

@@ -1,11 +1,16 @@
-import "../../styles/tgpq/tgpq_chaSel_abilities.css";
+import "../../styles/tgpq/tgpq_chaCard_abilities.css";
 import ProgressBar from "../general/general_progressbar";
 import HeartShape from "./tgpq_heart-shape";
-function TGPQCharacterAbilities() {
+function TGPQCharacterAbilities({
+  isHealthActualVisible = true,
+}: {
+  isHealthActualVisible?: boolean;
+}) {
   // TODO : Grab real data from database
   const personModelAbilities = [
     {
       health_max: 140,
+      health_actual: 120,
       strengh: 70,
       dexterity: 20,
       dodge: 40,
@@ -16,8 +21,11 @@ function TGPQCharacterAbilities() {
   return (
     <div className="tgpq-character-stats">
       <span className="life">
-        <p>{personModelAbilities[0].health_max}</p>
+        {isHealthActualVisible ? (
+          <p>{personModelAbilities[0].health_actual}</p>
+        ) : null}
         <HeartShape />
+        <p>{personModelAbilities[0].health_max}</p>
       </span>
       <span className="bar">
         <p>Strengh</p>
