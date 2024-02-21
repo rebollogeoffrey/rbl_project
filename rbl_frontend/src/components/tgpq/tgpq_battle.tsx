@@ -1,38 +1,26 @@
 import TGPQChaCardBody from "./tgpq_chaCard_cardBody";
+import { characterInfos } from "./tgpq_character_infos";
 
 function TGPQBattle() {
-  // TODO : Grab real data from database
-  const personAbilities = [
-    {
-      name: "Peasant Roger",
-      health_max: 140,
-      health_actual: 120,
-      strengh: 70,
-      dexterity: 20,
-      dodge: 40,
-      description: "I'm not here to suffer",
-      url_image: "test",
-    },
-    {
-      name: "Bad person n°4",
-      health_max: 100,
-      health_actual: 100,
-      strengh: 30,
-      dexterity: 80,
-      dodge: 70,
-      description: "Who ate my pie?!",
-      url_image: "test",
-    },
-  ];
+  // TODO : Find a better way to feed fct with character info -> props for now ?
+  // TODO : Find a better way to feed fct with character info -> Hook ? Witch one ?
+  // TODO : Handle images from database
+  const characterInformations = { characterInfos };
   return (
     <div className="font-family-tgpq-regular">
       <TGPQChaCardBody
-        toColumn={false}
-        characterName={personAbilities[0].name}
+        characterInfos={characterInformations.characterInfos[0]}
+        isInColumn={false}
+        isNameVisible={true}
+        isCharacterImageVisible={true}
+        areStatsVisible={true}
       />
       <TGPQChaCardBody
-        toColumn={false}
-        characterName={personAbilities[1].name}
+        characterInfos={characterInformations.characterInfos[1]}
+        isInColumn={false}
+        isNameVisible={true}
+        isCharacterImageVisible={true}
+        areStatsVisible={true}
       />
     </div>
   );

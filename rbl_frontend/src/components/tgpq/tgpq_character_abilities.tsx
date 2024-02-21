@@ -1,59 +1,45 @@
-import "../../styles/tgpq/tgpq_chaCard_abilities.css";
 import ProgressBar from "../general/general_progressbar";
 import HeartShape from "./tgpq_heart-shape";
-function TGPQCharacterAbilities({
-  isHealthActualVisible = true,
-}: {
-  isHealthActualVisible?: boolean;
+function TGPQCharacterAbilities(props: {
+  isHealthActualVisible: boolean;
+  characterInfos: object;
 }) {
-  // TODO : Grab real data from database
-  const personModelAbilities = [
-    {
-      health_max: 140,
-      health_actual: 120,
-      strengh: 70,
-      dexterity: 20,
-      dodge: 40,
-      description: "I forgot to kick your ass",
-      url_image: "test",
-    },
-  ];
   return (
     <div className="tgpq-character-stats">
       <span className="life">
-        {isHealthActualVisible ? (
-          <p>{personModelAbilities[0].health_actual}</p>
+        {props.isHealthActualVisible ? (
+          <p>{props.characterInfos.health_actual}</p>
         ) : null}
         <HeartShape />
-        <p>{personModelAbilities[0].health_max}</p>
+        <p>{props.characterInfos.health_max}</p>
       </span>
       <span className="bar">
         <p>Strengh</p>
         <ProgressBar
-          bgColorOuter="var(--LightestOne)"
+          bgColorOuter="var(--NearBlack)"
           bgColorInner="var(--GameTGPQ)"
-          progress={personModelAbilities[0].strengh}
-          textDisplayed={personModelAbilities[0].strengh.toString()}
+          progress={props.characterInfos.strengh}
+          textDisplayed={props.characterInfos.strengh}
           borderRadPx={8}
         />
       </span>
       <span className="bar">
         <p>Dexterity</p>
         <ProgressBar
-          bgColorOuter="var(--LightestOne)"
+          bgColorOuter="var(--NearBlack)"
           bgColorInner="var(--GameTGPQ)"
-          progress={personModelAbilities[0].dexterity}
-          textDisplayed={personModelAbilities[0].dexterity.toString()}
+          progress={props.characterInfos.dexterity}
+          textDisplayed={props.characterInfos.dexterity}
           borderRadPx={8}
         />
       </span>
       <span className="bar">
         <p>Dodge</p>
         <ProgressBar
-          bgColorOuter="var(--LightestOne)"
+          bgColorOuter="var(--NearBlack)"
           bgColorInner="var(--GameTGPQ)"
-          progress={personModelAbilities[0].dodge}
-          textDisplayed={personModelAbilities[0].dodge.toString()}
+          progress={props.characterInfos.dodge}
+          textDisplayed={props.characterInfos.dodge}
           borderRadPx={8}
         />
       </span>

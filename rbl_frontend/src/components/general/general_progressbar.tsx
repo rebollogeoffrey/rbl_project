@@ -11,10 +11,11 @@ function ProgressBar({
   bgColorInner: string;
   progress: number; // Percentage of progress
   borderRadPx?: number; //In pixels
-  justifyCnt?: string;
+  justifyCnt?: string; // flex-start, flex-end, center, space-between, space-around
   textDisplayed?: string;
   textColor?: string;
 }) {
+  // TODO : Remove static inline css and put it in a file
   const OuterDiv = {
     width: `100%`,
     backgroundColor: bgColorOuter,
@@ -32,6 +33,8 @@ function ProgressBar({
     margin: "0",
     justifyContent: justifyCnt,
     display: "flex",
+    borderRight: `1px solid var(--LightestOne)`,
+    borderLeft: `1px solid var(--LightestOne)`,
   };
 
   const textSpan = {
