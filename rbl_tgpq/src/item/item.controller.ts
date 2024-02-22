@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ItemService } from './item.service';
 import { CreateItemDto } from './dto/create-item.dto';
 import { UpdateItemDto } from './dto/update-item.dto';
@@ -19,7 +27,7 @@ export class ItemController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.itemService.findOne(+id);
+    return this.itemService.findById(id);
   }
 
   @Patch(':id')
@@ -29,6 +37,6 @@ export class ItemController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.itemService.remove(+id);
+    return this.itemService.remove(id);
   }
 }

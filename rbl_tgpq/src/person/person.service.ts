@@ -75,13 +75,20 @@ export class PersonService {
     return dex;
   }
 
-  async battle(idHero: string, idMonster: string, mode: boolean) {
+  async battle(
+    idHero: string,
+    idMonster: string,
+    mode: boolean,
+    healthMonster?: number,
+  ) {
     const hero = await this.findById(idHero);
     const monster = await this.personModelRepository.findOne({
       where: [{ id: idMonster }],
     });
 
-    let healthMonster: number = monster.health_max;
+    if (!healthMonster) {
+      healthMonster = monster.health_max;
+    }
 
     // if mode true : fight else defend
     let itemStrengthValue = 0;
@@ -164,10 +171,11 @@ export class PersonService {
     const oneRandomMonster =
       allMonster[this.getRandomInt((await allMonster).length)];
     const monster = await this.create({
-      ...oneRandomMonster,
-      gold: 100,
+      gold: this.getRandomInt(100),
       health: oneRandomMonster.health_max,
       userId: idUser,
+      personModel: oneRandomMonster,
+      items: [],
     });
 
     return [hero, monster];

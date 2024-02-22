@@ -27,7 +27,12 @@ export class StatisticController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.statisticService.findOne(+id);
+    return this.statisticService.findOne(id);
+  }
+
+  @Get(':user')
+  getStatisticByUserId(@Param('user') userId: string) {
+    return this.statisticService.getStatisticByUserId(userId);
   }
 
   @Patch(':id')
@@ -35,11 +40,11 @@ export class StatisticController {
     @Param('id') id: string,
     @Body() updateStatisticDto: UpdateStatisticDto,
   ) {
-    return this.statisticService.update(+id, updateStatisticDto);
+    return this.statisticService.update(id, updateStatisticDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.statisticService.remove(+id);
+    return this.statisticService.remove(id);
   }
 }

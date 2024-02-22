@@ -43,17 +43,17 @@ export class PersonController {
     return this.personService.remove(id);
   }
 
-  @Patch('battle/:id1/:id2/:mode')
+  @Patch('battle/:hero/:monster/:mode')
   battle(
-    @Param('id1') idHero: string,
-    @Param('id2') idMonster: string,
+    @Param('hero') idHero: string,
+    @Param('monster') idMonster: string,
     @Param('mode') mode: boolean,
   ) {
     return this.personService.battle(idHero, idMonster, mode);
   }
 
-  @Patch('startBattle/:id1/:id2')
-  startBattle(@Param('id1') idHero: string, @Param('id2') idUser: string) {
+  @Patch('startBattle/:hero/:user')
+  startBattle(@Param('hero') idHero: string, @Param('user') idUser: string) {
     return this.personService.startBattle(idHero, idUser);
   }
 }
