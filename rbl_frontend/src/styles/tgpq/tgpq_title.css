@@ -1,7 +1,33 @@
 .tgpq-title {
-    font-size: 3em;
-    margin: 15%;
+    width: 100%;
+    height: auto;
+    margin-top: 15%;
     margin-bottom: 0%;
+    text-align: center;
+    font-weight: bold;
+    font-family: font-family-tgpq-bold;
+}
+
+h1.tgpq-title {
+    font-size: 3em;
     color: var(--LightestOne);
     text-shadow: 0px 0px 10px var(--GameTGPQ);
+}
+
+h2.tgpq-title {
+    font-size: 2em;
+    color: var(--LightestOne);
+    text-shadow: 0px 0px 10px var(--DarkestOne);
+}
+
+h3.tgpq-title {
+    font-size: 1em;
+    color: var(--DarkestOne);
+    margin-top: 5%;
+}
+
+h4.tgpq-title {
+    font-size: 0.8em;
+    color: var(--DarkestOne);
+    margin-top: 3%;
 }

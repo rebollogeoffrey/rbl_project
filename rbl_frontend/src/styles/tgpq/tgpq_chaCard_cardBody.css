@@ -16,6 +16,10 @@
     align-content: center;
 }
 
+.tgpq-chaCard-card * {
+    border: 1px fuchsia dotted;
+}
+
 .tgpq-chaCard-card.column {
     flex-direction: column;
 }
@@ -33,19 +37,28 @@
     align-items: flex-start;
 }
 
-.tgpq-chaCard-card.row .tgpq-character-stats, .tgpq-chaCard-card.row img {
-    width: 50%;
+.tgpq-chaCard-card.row .tgpq-character-stats {
+    width: 49%;
 }
 
-/* Every p of every stats */
+/* Every p of every stats (heart and bars) */
 .tgpq-character-stats p {
     color: var(--DarkestOne);
-    font-weight: bold;
     padding-right: 10px;
     font-size: 25px;
 }
 
-/* Each progress bar with text */
+/* First p of heart */
+.tgpq-character-stats .life p:first-of-type {
+    font-weight: bold;
+}
+
+/* Every p of bars */
+.tgpq-character-stats .bar p {
+    font-style: italic;
+}
+
+/* Each progress bar with text in it */
 .tgpq-character-stats .bar {
     width: 100%;
     margin-top: 0.3em;

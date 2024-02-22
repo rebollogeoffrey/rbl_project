@@ -14,6 +14,7 @@ function TGPQBattle() {
         isNameVisible={true}
         isCharacterImageVisible={true}
         areStatsVisible={true}
+        isHealthActualVisible={true}
       />
       <TGPQChaCardBody
         characterInfos={characterInformations.characterInfos[1]}
@@ -21,6 +22,7 @@ function TGPQBattle() {
         isNameVisible={true}
         isCharacterImageVisible={true}
         areStatsVisible={true}
+        isHealthActualVisible={true}
       />
     </div>
   );

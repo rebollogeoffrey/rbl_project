@@ -1,8 +1,8 @@
 import "../../styles/tgpq/tgpq_chaCard_cardBody.css";
 import TGPQChaCardImage from "./tgpq_chaCard_image";
-import TGPQChaCardName from "./tgpq_chaCard_name";
 import TGPQCharacterAbilities from "./tgpq_character_abilities";
 import { ICharacterInfo } from "./tgpq_character_infos";
+import TGPQTitle from "./tgpq_title";
 
 export default function TGPQChaCardBody(props: {
   characterInfos: ICharacterInfo;
@@ -10,6 +10,7 @@ export default function TGPQChaCardBody(props: {
   isNameVisible: boolean;
   isCharacterImageVisible: boolean;
   areStatsVisible: boolean;
+  isHealthActualVisible: boolean;
 }) {
   return (
     <div className="tgpq-chaCard-body">
@@ -17,7 +18,7 @@ export default function TGPQChaCardBody(props: {
         className={"tgpq-chaCard-card " + (props.isInColumn ? "column" : "row")}
       >
         {props.isNameVisible ? (
-          <TGPQChaCardName characterName={props.characterInfos.name} />
+          <TGPQTitle title={props.characterInfos.name} howImportant={3} />
         ) : null}
         {props.isCharacterImageVisible ? (
           <TGPQChaCardImage
@@ -28,7 +29,7 @@ export default function TGPQChaCardBody(props: {
         {props.areStatsVisible ? (
           <TGPQCharacterAbilities
             characterInfos={props.characterInfos}
-            isHealthActualVisible={false}
+            isHealthActualVisible={props.isHealthActualVisible}
           />
         ) : null}
       </div>

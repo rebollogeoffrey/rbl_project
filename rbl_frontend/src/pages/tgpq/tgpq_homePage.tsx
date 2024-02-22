@@ -7,7 +7,7 @@ import { gamesInformations } from "../../components/hub/hub_hub_informations";
 function TGPQHomePage() {
   return (
     <div className="font-family-tgpq-regular bg-tgpq-home">
-      <TGPQTitle title="The Great's Peasant Quest" />
+      <TGPQTitle title="The Great's Peasant Quest" howImportant={1} />
       <TGPQLogo />
       <TGPQDescription gameDescription={gamesInformations[0].descriptionGame} />
       <TGPQButtonNext path="/selectCharacter" />
