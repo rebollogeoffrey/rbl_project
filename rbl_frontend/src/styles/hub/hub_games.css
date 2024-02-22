@@ -11,7 +11,7 @@
 }
 
 .game-2 {
-  background: linear-gradient(var(--Golden), var(--DarkestOne));
+  background: linear-gradient(var(--DarkBlue), var(--DarkestOne));
 }
 
 .game-3 {
