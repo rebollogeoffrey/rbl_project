@@ -6,7 +6,18 @@ TODO : REGARDER GRAPHQL: Permettra de faire simplement la conversation de donné
 TODO : Update le format d'arrivée de stats avec new bdd
 */
 
-export const characterInfos = [
+export interface ICharacterInfo {
+  name: string;
+  health_max: number;
+  health_actual: number;
+  strengh: number;
+  dexterity: number;
+  dodge: number;
+  description: string;
+  url_image: string;
+}
+
+export const characterInfos: ICharacterInfo[] = [
   {
     name: "Peasant Roger",
     health_max: 140,

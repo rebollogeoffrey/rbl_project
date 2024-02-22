@@ -1,8 +1,9 @@
 import ProgressBar from "../general/general_progressbar";
+import { ICharacterInfo } from "./tgpq_character_infos";
 import HeartShape from "./tgpq_heart-shape";
 function TGPQCharacterAbilities(props: {
   isHealthActualVisible: boolean;
-  characterInfos: object;
+  characterInfos: ICharacterInfo;
 }) {
   return (
     <div className="tgpq-character-stats">
@@ -19,7 +20,7 @@ function TGPQCharacterAbilities(props: {
           bgColorOuter="var(--NearBlack)"
           bgColorInner="var(--GameTGPQ)"
           progress={props.characterInfos.strengh}
-          textDisplayed={props.characterInfos.strengh}
+          textDisplayed={props.characterInfos.strengh.toString()}
           borderRadPx={8}
         />
       </span>
@@ -29,7 +30,7 @@ function TGPQCharacterAbilities(props: {
           bgColorOuter="var(--NearBlack)"
           bgColorInner="var(--GameTGPQ)"
           progress={props.characterInfos.dexterity}
-          textDisplayed={props.characterInfos.dexterity}
+          textDisplayed={props.characterInfos.dexterity.toString()}
           borderRadPx={8}
         />
       </span>
@@ -39,7 +40,7 @@ function TGPQCharacterAbilities(props: {
           bgColorOuter="var(--NearBlack)"
           bgColorInner="var(--GameTGPQ)"
           progress={props.characterInfos.dodge}
-          textDisplayed={props.characterInfos.dodge}
+          textDisplayed={props.characterInfos.dodge.toString()}
           borderRadPx={8}
         />
       </span>

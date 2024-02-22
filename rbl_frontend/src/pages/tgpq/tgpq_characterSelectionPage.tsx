@@ -5,14 +5,6 @@ import { characterInfos } from "../../components/tgpq/tgpq_character_infos";
 
 function TGPQCharacterSelectionPage() {
   const characterInformations = { characterInfos };
-  console.log(
-    "---> characterInformations\n" +
-      typeof characterInformations +
-      "\n" +
-      characterInformations.characterInfos[0].name +
-      "\n" +
-      typeof characterInformations
-  );
   return (
     <div className="font-family-tgpq-regular bg-tgpq-tavern">
       <TGPQChaCardTitle title="Select your character" />
