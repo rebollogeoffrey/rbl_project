@@ -14,6 +14,7 @@ function TGPQCharacterSelectionPage() {
         isNameVisible={true}
         isCharacterImageVisible={true}
         areStatsVisible={true}
+        isHealthActualVisible={false}
       />
       <TGPQButtonNext path="/map" />
     </div>
