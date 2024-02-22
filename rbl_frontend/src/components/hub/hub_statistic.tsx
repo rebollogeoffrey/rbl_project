@@ -1,14 +1,14 @@
 import "../../styles/hub/hub_statistic.css";
-import { characterStats } from "../tgpq/tgpq_character_infos";
+import { allGamesStatsForUser } from "../../components/hub/hub_hub_informations";
 
 function Statistic() {
-  const userStats = { characterStats };
+  const userStats = { allGamesStatsForUser };
 
   return (
     <div className="stat">
       <h1>Statistics</h1>
       <div className="stat-container">
-        {userStats.characterStats.map((data) => {
+        {userStats.allGamesStatsForUser.map((data) => {
           return (
             // replace all non-alphanumeric characters with an empty string and take the first 8 characters of each game's name
             <div

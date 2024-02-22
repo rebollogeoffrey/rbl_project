@@ -1,50 +1,13 @@
 import { Link } from "react-router-dom";
-import LogoRBL from "../../assets/images/logo_RBL.png";
-import LogoTGPQ from "../../assets/images/tgpq/tgpq_logo.png";
 import "../../styles/hub/hub_gameselection.css";
+import { IGamesInformations } from "./hub_hub_informations";
 
-function GameSelection() {
-  const arrayTest = [
-    {
-      imageGame: LogoTGPQ,
-      nameGame: "The Great Peasant's Quest",
-      routeGame: "tgpq",
-      descriptionGame:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus tincidunt ornare arcu, at pulvinar nisl. In eget est id lectus rhoncus efficitur ac ut lorem. Phasellus egestas hendrerit urna ut consequat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus tincidunt ornare arcu, at pulvinar nisl. In eget est id lectus rhoncus efficitur ac ut lorem. Phasellus egestas hendrerit urna ut CONSEQUAT.",
-    },
-    {
-      imageGame: LogoRBL,
-      nameGame: "Lootery",
-      routeGame: "tgpq",
-      descriptionGame:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at tellus vestibulum, efficitur lorem in, mattis tellus. Nullam vestibulum sem sit amet nunc faucibus, id viverra nibh pharetra. Phasellus mollis dapibus dolor, blandit scelerisque leo porttitor vel. Nam molestie odio ut dui ornare, eu suscipit nunc TINCIDUNT.",
-    },
-    {
-      imageGame: LogoRBL,
-      nameGame: "Lootery",
-      routeGame: "tgpq",
-      descriptionGame: "LOREM",
-    },
-    {
-      imageGame: LogoRBL,
-      nameGame: "Mount",
-      routeGame: "tgpq",
-      descriptionGame:
-        "Etiam consequat erat diam, sed bibendum ex ornare id. Nulla non maximus lectus, vel mollis nisl. Suspendisse consequat urna ac dolor porta, luctus condimentum enim tempus. Aenean convallis turpis vitae mi posuere, vel teempor odio semper. Nulla mattis enim auctor nisl imperdiet viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec lacus mauris, posuere id fermentum ut, ultricies at libero. Donec lorem velit, bibendum at lacinia in, facilisis id ELIT.",
-    },
-    {
-      imageGame: LogoRBL,
-      nameGame: "Patata",
-      routeGame: "tgpq",
-      descriptionGame:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus tincidunt ornare arcu, at pulvinar nisl. In eget est id lectus rhoncus efficitur ac ut lorem. Phasellus egestas hendrerit urna ut CONSEQUAT.",
-    },
-  ];
+function GameSelection(props: { gamesInformations: IGamesInformations[] }) {
   return (
     <div className="selection">
       <h1>Choose Your Game</h1>
       <div className="selection-container">
-        {arrayTest.map((game, index) => {
+        {props.gamesInformations.map((game, index) => {
           const link = "/" + game.routeGame;
           return (
             <Link to={link} className="selection-game-link">

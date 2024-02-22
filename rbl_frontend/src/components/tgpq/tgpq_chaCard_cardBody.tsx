@@ -17,10 +17,13 @@ export default function TGPQChaCardBody(props: {
         className={"tgpq-chaCard-card " + (props.isInColumn ? "column" : "row")}
       >
         {props.isNameVisible ? (
-          <TGPQChaCardName characterInfos={props.characterInfos} />
+          <TGPQChaCardName characterName={props.characterInfos.name} />
         ) : null}
         {props.isCharacterImageVisible ? (
-          <TGPQChaCardImage characterInfos={props.characterInfos} />
+          <TGPQChaCardImage
+            characterName={props.characterInfos.name}
+            characterImageURL={props.characterInfos.url_image}
+          />
         ) : null}
         {props.areStatsVisible ? (
           <TGPQCharacterAbilities
