@@ -1,6 +1,7 @@
 import TGPQBattle from "../../components/tgpq/tgpq_battle";
 import TGPQTitle from "../../components/tgpq/tgpq_title";
 import "../../styles/App.css";
+import "../../styles/tgpq/tgpq_battle.css";
 
 function TGPQMapPage() {
   return (

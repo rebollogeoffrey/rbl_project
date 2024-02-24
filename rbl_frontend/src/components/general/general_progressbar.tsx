@@ -33,8 +33,8 @@ function ProgressBar({
     margin: "0",
     justifyContent: justifyCnt,
     display: "flex",
-    borderRight: `1px solid var(--LightestOne)`,
-    borderLeft: `1px solid var(--LightestOne)`,
+    borderRight: `2px solid var(--LightestOne)`,
+    borderLeft: `2px solid var(--LightestOne)`,
   };
 
   const textSpan = {
