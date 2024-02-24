@@ -1,3 +1,4 @@
+import { Category } from '../../personmodel/entities/personmodel.entity';
 import {
   Column,
   CreateDateColumn,
@@ -24,13 +25,14 @@ export class Statistic {
   nb_lose: number;
 
   @Column({
-    type: 'array',
-    default: 0,
+    type: 'json',
+    default: '{}',
+    array: false,
   })
-  kills: Array<{ category: string; nb_killed: number }>;
+  kills: Array<{ category: Category; nb_killed: number }>;
 
   @Column({
-    type: 'string',
+    type: 'varchar',
     default: 0,
   })
   userId: string;

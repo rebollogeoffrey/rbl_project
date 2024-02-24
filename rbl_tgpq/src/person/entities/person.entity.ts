@@ -3,6 +3,7 @@ import { PersonModel } from '../../personmodel/entities/personmodel.entity';
 import {
   Column,
   CreateDateColumn,
+  Entity,
   JoinTable,
   ManyToMany,
   ManyToOne,
@@ -10,6 +11,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
+@Entity()
 export class Person {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -29,7 +31,7 @@ export class Person {
   health: number;
 
   @Column({
-    type: 'string',
+    type: 'varchar',
     unique: false,
   })
   userId: string;

@@ -102,6 +102,7 @@ export class PersonModel {
     type: 'enum',
     nullable: false,
     comment: 'Category of PersonModel',
+    enum: Category,
   })
   category: Category;
 
