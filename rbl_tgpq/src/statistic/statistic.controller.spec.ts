@@ -4,6 +4,7 @@ import { StatisticService } from './statistic.service';
 
 describe('StatisticController', () => {
   let controller: StatisticController;
+  let service: StatisticService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -12,9 +13,11 @@ describe('StatisticController', () => {
     }).compile();
 
     controller = module.get<StatisticController>(StatisticController);
+    service = module.get<StatisticService>(StatisticService);
   });
 
   it('should be defined', () => {
     expect(controller).toBeDefined();
+    expect(service).toBeDefined();
   });
 });

@@ -25,7 +25,7 @@ export class StatisticService {
   }
 
   async update(idStat: string, updateStatistic: UpdateStatisticDto) {
-    updateStatistic = { idStat, ...updateStatistic };
+    updateStatistic = { id: idStat, ...updateStatistic };
     return this.statisticRepository.save(updateStatistic);
   }
 
