@@ -16,9 +16,9 @@
     align-content: center;
 }
 
-.tgpq-chaCard-card * {
+/* .tgpq-chaCard-card * {
     border: 1px fuchsia dotted;
-}
+} */
 
 .tgpq-chaCard-card.column {
     flex-direction: column;

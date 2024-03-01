@@ -1,5 +1,6 @@
 import LogoRBL from "../../assets/images/logo_RBL.png";
 import LogoTGPQ from "../../assets/images/tgpq/tgpq_logo.png";
+import LogoLootery from "../../assets/images/tgpq/logo_lootery.png";
 
 export interface IGamesInformations {
   imageGame: string;
@@ -17,30 +18,29 @@ export const gamesInformations = [
       "Welcome to the greatest of all great quest ! A quest of glory, of honor, of ... of ... Oh no... That's just you... That's embarassing haha...ha..ha. *Cough* *Cough* Well, erm, I guess that'll just be the story of you, a low class peasant. It's nice too, no? How will I announce that to the public now? It'll be a complete desaster ! We can't change how it is, huh? If your love for buying a new nice looking hat is huge enough, try to survive on the road to the city's market!",
   },
   {
-    imageGame: LogoRBL,
+    imageGame: LogoLootery,
     nameGame: "Lootery",
-    routeGame: "tgpq",
-    descriptionGame:
-      "Sometimes, you may win. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at tellus vestibulum, efficitur lorem in, mattis tellus. Nullam vestibulum sem sit amet nunc faucibus, id viverra nibh pharetra. Phasellus mollis dapibus dolor, blandit scelerisque leo porttitor vel. Nam molestie odio ut dui ornare, eu suscipit nunc TINCIDUNT.",
+    routeGame: "NONE",
+    descriptionGame: "Sometimes, you may win. Mostly, the house gets richer",
   },
   {
     imageGame: LogoRBL,
     nameGame: "The dog show",
-    routeGame: "tgpq",
+    routeGame: "NONE",
     descriptionGame:
       "Curabitur at tellus vestibulum, efficitur lorem in, mattis tellus. LOREM",
   },
   {
     imageGame: LogoRBL,
     nameGame: "Mount and grass",
-    routeGame: "tgpq",
+    routeGame: "NONE",
     descriptionGame:
       "Etiam consequat erat diam, sed bibendum ex ornare id. Nulla non maximus lectus, vel mollis nisl. Suspendisse consequat urna ac dolor porta, luctus condimentum enim tempus. Aenean convallis turpis vitae mi posuere, vel teempor odio semper. Nulla mattis enim auctor nisl imperdiet viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec lacus mauris, posuere id fermentum ut, ultricies at libero. Donec lorem velit, bibendum at lacinia in, facilisis id ELIT.",
   },
   {
     imageGame: LogoRBL,
     nameGame: "Patata Banana",
-    routeGame: "tgpq",
+    routeGame: "NONE",
     descriptionGame:
       "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus tincidunt ornare arcu, at pulvinar nisl. In eget est id lectus rhoncus efficitur ac ut lorem. Phasellus egestas hendrerit urna ut CONSEQUAT.",
   },

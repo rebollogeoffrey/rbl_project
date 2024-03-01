@@ -1,33 +1,33 @@
 import "../../styles/tgpq/tgpq_maplocations.css";
 import { Link } from "react-router-dom";
-import ImgSign from "../../assets/images/tgpq/tgpq_location_direction-sign.png";
-import ImgLove from "../../assets/images/tgpq/tgpq_location_love.webp";
-import ImgThird from "../../assets/images/tgpq/tgpq_location_third.png";
-import ImgIndia from "../../assets/images/tgpq/tgpq_location_india.png";
-import ImgIsland from "../../assets/images/tgpq/tgpq_location_island.png";
+import ImgSign from "../../assets/images/tgpq/locations/tgpq_location_direction-sign.png";
+import ImgHugeForest from "../../assets/images/tgpq/locations/tgpq_location_huge-forest.png";
+import ImgVillage from "../../assets/images/tgpq/locations/tgpq_location_village.png";
+import ImgCave from "../../assets/images/tgpq/locations/tgpq_location_cave.png";
+import ImgOldTree from "../../assets/images/tgpq/locations/tgpq_location_old-tree.png";
 
 function TGPQMapLocations() {
   // WARNING : DO NOT CHANGE THE ORDER OF THESE LOCATIONS, THEY ARE USED FOR THE MAP !!!
   // WARNING : The FIRST visitable MUST be the LAST location in the array so it can be deleted when visited without changes the location's index
   const locationsArray = [
     {
-      locationName: "Fifth Island",
-      imageUrl: ImgIsland,
+      locationName: "Fifth: The old tree",
+      imageUrl: ImgOldTree,
     },
     {
-      locationName: "Fourth India",
-      imageUrl: ImgIndia,
+      locationName: "Fourth : Cave",
+      imageUrl: ImgCave,
     },
     {
-      locationName: "Third 3rd",
-      imageUrl: ImgThird,
+      locationName: "Third: Village",
+      imageUrl: ImgVillage,
     },
     {
-      locationName: "Second love",
-      imageUrl: ImgLove,
+      locationName: "Second: Huge Forest",
+      imageUrl: ImgHugeForest,
     },
     {
-      locationName: "First sign",
+      locationName: "First: sign",
       imageUrl: ImgSign,
     },
   ];

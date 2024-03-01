@@ -23,18 +23,39 @@
 
 /* Background images ------------*/
 .bg-tgpq-home {
-  background-image: url("../assets/images/tgpq/tgpq_bg_home.jpg");
+  background-image: url("../assets/images/tgpq/backgrounds/tgpq_bg_home.png");
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
 }
 
 .bg-tgpq-tavern {
-  background-image: url("../assets/images/tgpq/tgpq_bg_tavern.jpg");
+  background-image: url("../assets/images/tgpq/backgrounds/tgpq_bg_tavern.png");
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
 }
 
 .bg-tgpq-map {
-  background-image: url("../assets/images/tgpq/tgpq_bg_map.png");
+  background-image: url("../assets/images/tgpq/backgrounds/tgpq_bg_map.png");
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+}
+
+.bg-tgpq-battle {
+  background-image: url("../assets/images/tgpq/backgrounds/tgpq_bg_battle.jpeg");
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
 }
 
 body {

@@ -8,7 +8,7 @@ function TGPQChaCardImage(props: {
     <img
       src={props.characterImageURL}
       alt={props.characterName}
-      className="tgpq-character-selected-img"
+      className="tgpq-chaCard-img"
     />
   );
 }

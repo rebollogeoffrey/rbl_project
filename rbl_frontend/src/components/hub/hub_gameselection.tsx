@@ -8,7 +8,11 @@ function GameSelection(props: { gamesInformations: IGamesInformations[] }) {
       <h1>Choose Your Game</h1>
       <div className="selection-container">
         {props.gamesInformations.map((game, index) => {
-          const link = "/" + game.routeGame;
+          let link = "/" + game.routeGame;
+          // If game is NONE, then stay in hub to select a game
+          if (game.routeGame === "NONE") {
+            link = "/hub";
+          }
           return (
             <Link to={link} className="selection-game-link">
               <div className={`selection-game game-${index}`}>
