@@ -4,7 +4,7 @@ import "../../styles/App.css";
 
 export default function TGPQMapPage() {
   return (
-    <div className="font-family-tgpq-regular bg-tgpq-tavern">
+    <div className="font-family-tgpq-regular bg-tgpq-battle">
       <TGPQTitle title="Battle" howImportant={1} />
       <TGPQBattle />
     </div>
