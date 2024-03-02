@@ -3,8 +3,9 @@ import TGPQTitle from "../../components/tgpq/tgpq_title";
 import TGPQLogo from "../../components/tgpq/tgpq_logo";
 import TGPQButtonNext from "../../components/tgpq/tgpq_buttonnext";
 import { gamesInformations } from "../../components/hub/hub_hub_informations";
+import "../../styles/App.css";
 
-function TGPQHomePage() {
+export default function TGPQHomePage() {
   return (
     <div className="font-family-tgpq-regular bg-tgpq-home">
       <TGPQTitle title="The Great's Peasant Quest" howImportant={1} />
@@ -14,5 +15,3 @@ function TGPQHomePage() {
     </div>
   );
 }
-
-export default TGPQHomePage;

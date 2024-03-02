@@ -1,15 +1,14 @@
-import "../../styles/tgpq/tgpq_character.css";
+import "../../styles/tgpq/tgpq_card_image.css";
 
-function TGPQChaCardImage(props: {
+export default function TGPQCardImage(props: {
   characterName: string;
   characterImageURL: string;
 }) {
   return (
     <img
+      className="tgpq-card-image"
       src={props.characterImageURL}
       alt={props.characterName}
-      className="tgpq-chaCard-img"
     />
   );
 }
-export default TGPQChaCardImage;

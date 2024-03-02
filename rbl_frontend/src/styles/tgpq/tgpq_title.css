@@ -8,6 +8,12 @@
     font-family: font-family-tgpq-bold;
 }
 
+@media screen and (max-width: 600px) {
+    .tgpq-title {
+        margin-top: 2%;
+    }
+}
+
 h1.tgpq-title {
     font-size: 3em;
     color: var(--LightestOne);
@@ -22,7 +28,7 @@ h2.tgpq-title {
 
 h3.tgpq-title {
     font-size: 1em;
-    color: var(--DarkestOne);
+    color: var(--NearBlack);
     margin-top: 5%;
 }
 

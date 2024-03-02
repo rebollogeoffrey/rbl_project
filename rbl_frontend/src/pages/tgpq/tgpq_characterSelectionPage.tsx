@@ -1,14 +1,14 @@
 import TGPQButtonNext from "../../components/tgpq/tgpq_buttonnext";
-import TGPQChaCardBody from "../../components/tgpq/tgpq_chaCard_cardBody";
-import { characterInfos } from "../../components/tgpq/tgpq_character_infos";
+import TGPQCardBody from "../../components/tgpq/tgpq_card_body";
 import TGPQTitle from "../../components/tgpq/tgpq_title";
+import { characterInfos } from "../../components/tgpq/tgpq_character_infos";
 
-function TGPQCharacterSelectionPage() {
+export default function TGPQCharacterSelectionPage() {
   const characterInformations = { characterInfos };
   return (
     <div className="font-family-tgpq-regular bg-tgpq-tavern">
       <TGPQTitle title="Select your character" howImportant={2} />
-      <TGPQChaCardBody
+      <TGPQCardBody
         characterInfos={characterInformations.characterInfos[0]}
         isInColumn={true}
         isNameVisible={true}
@@ -20,5 +20,3 @@ function TGPQCharacterSelectionPage() {
     </div>
   );
 }
-
-export default TGPQCharacterSelectionPage;

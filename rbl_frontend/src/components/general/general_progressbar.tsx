@@ -1,4 +1,4 @@
-function ProgressBar({
+export default function ProgressBar({
   bgColorOuter,
   bgColorInner,
   progress,
@@ -53,5 +53,3 @@ function ProgressBar({
     </div>
   );
 }
-
-export default ProgressBar;

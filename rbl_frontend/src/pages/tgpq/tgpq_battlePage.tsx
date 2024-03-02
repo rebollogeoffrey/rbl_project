@@ -1,14 +1,12 @@
 import TGPQBattle from "../../components/tgpq/tgpq_battle";
 import TGPQTitle from "../../components/tgpq/tgpq_title";
 import "../../styles/App.css";
-import "../../styles/tgpq/tgpq_battle.css";
 
-function TGPQMapPage() {
+export default function TGPQMapPage() {
   return (
-    <div className="font-family-tgpq-regular bg-tgpq-battle">
+    <div className="font-family-tgpq-regular bg-tgpq-tavern">
       <TGPQTitle title="Battle" howImportant={1} />
       <TGPQBattle />
     </div>
   );
 }
-export default TGPQMapPage;

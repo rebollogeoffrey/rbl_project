@@ -1,12 +1,14 @@
-import ProgressBar from "../general/general_progressbar";
 import { ICharacterInfo } from "./tgpq_character_infos";
+import ProgressBar from "../general/general_progressbar";
 import HeartShape from "./tgpq_heart-shape";
-function TGPQCharacterAbilities(props: {
+import "../../styles/tgpq/tgpq_card_abilities.css";
+
+export default function TGPQCardAbilities(props: {
   isHealthActualVisible: boolean;
   characterInfos: ICharacterInfo;
 }) {
   return (
-    <div className="tgpq-character-stats">
+    <div className="tgpq-card-abilities">
       <span className="life">
         {props.isHealthActualVisible ? (
           <p>{props.characterInfos.health_actual}</p>
@@ -47,4 +49,3 @@ function TGPQCharacterAbilities(props: {
     </div>
   );
 }
-export default TGPQCharacterAbilities;
