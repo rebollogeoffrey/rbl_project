@@ -1,5 +1,5 @@
 import "../../styles/hub/hub_statistic.css";
-import { allGamesStatsForUser } from "../../components/hub/hub_hub_informations";
+import { allGamesStatsForUser } from "./data/hub_hub_informations";
 
 function Statistic() {
   const userStats = { allGamesStatsForUser };

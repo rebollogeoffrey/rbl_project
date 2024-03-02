@@ -1,4 +1,4 @@
-import { ICharacterInfo } from "./tgpq_character_infos";
+import { ICharacterInfo } from "./data/tgpq_character_infos";
 import TGPQCardImage from "./tgpq_card_image";
 import TGPQCardAbilities from "./tgpq_card_abilities";
 import TGPQTitle from "./tgpq_title";

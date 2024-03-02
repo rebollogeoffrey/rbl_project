@@ -1,6 +1,6 @@
 import TGPQButtonBattle from "./tgpq_buttonbattle";
 import TGPQChaCardBody from "./tgpq_card_body";
-import { characterInfos } from "./tgpq_character_infos";
+import { characterInfos } from "./data/tgpq_character_infos";
 import TGPQTitle from "./tgpq_title";
 import "../../styles/tgpq/tgpq_battle.css";
 

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../../styles/hub/hub_gameselection.css";
-import { IGamesInformations } from "./hub_hub_informations";
+import { IGamesInformations } from "./data/hub_hub_informations";
 
 function GameSelection(props: { gamesInformations: IGamesInformations[] }) {
   return (

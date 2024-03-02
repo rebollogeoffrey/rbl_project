@@ -6,8 +6,8 @@ TODO : REGARDER GRAPHQL: Permettra de faire simplement la conversation de donné
 TODO : Update le format d'arrivée de stats avec new bdd
 */
 
-import heroImageURL from "../../assets/images/tgpq/persons/heroes/tgpq_character_peasant.png";
-import monsterImageURL from "../../assets/images/tgpq/persons/monsters/tgpq_monster_goblin.png";
+import heroImageURL from "../../../assets/images/tgpq/persons/heroes/tgpq_character_peasant.png";
+import monsterImageURL from "../../../assets/images/tgpq/persons/monsters/tgpq_monster_goblin.png";
 
 export interface ICharacterInfo {
   name: string;

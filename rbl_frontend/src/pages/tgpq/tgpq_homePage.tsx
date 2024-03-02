@@ -2,7 +2,7 @@ import TGPQDescription from "../../components/tgpq/tgpq_homeDescription";
 import TGPQTitle from "../../components/tgpq/tgpq_title";
 import TGPQLogo from "../../components/tgpq/tgpq_logo";
 import TGPQButtonNext from "../../components/tgpq/tgpq_buttonnext";
-import { gamesInformations } from "../../components/hub/hub_hub_informations";
+import { gamesInformations } from "../../components/hub/data/hub_hub_informations";
 import "../../styles/App.css";
 
 export default function TGPQHomePage() {

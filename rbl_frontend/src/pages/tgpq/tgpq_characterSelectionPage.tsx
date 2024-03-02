@@ -1,7 +1,7 @@
 import TGPQButtonNext from "../../components/tgpq/tgpq_buttonnext";
 import TGPQCardBody from "../../components/tgpq/tgpq_card_body";
 import TGPQTitle from "../../components/tgpq/tgpq_title";
-import { characterInfos } from "../../components/tgpq/tgpq_character_infos";
+import { characterInfos } from "../../components/tgpq/data/tgpq_character_infos";
 
 export default function TGPQCharacterSelectionPage() {
   const characterInformations = { characterInfos };

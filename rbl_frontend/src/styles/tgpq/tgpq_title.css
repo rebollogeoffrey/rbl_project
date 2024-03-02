@@ -1,8 +1,7 @@
 .tgpq-title {
-    width: 100%;
+    width: 75%;
     height: auto;
-    margin-top: 5%;
-    margin-bottom: 0%;
+    margin: 5% auto 0 auto;
     text-align: center;
     font-weight: bold;
     font-family: font-family-tgpq-bold;

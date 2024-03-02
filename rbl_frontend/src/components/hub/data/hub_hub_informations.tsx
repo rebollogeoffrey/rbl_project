@@ -1,6 +1,6 @@
-import LogoRBL from "../../assets/images/logo_RBL.png";
-import LogoTGPQ from "../../assets/images/tgpq/tgpq_logo.png";
-import LogoLootery from "../../assets/images/tgpq/logo_lootery.png";
+import LogoRBL from "../../../assets/images/logo_RBL.png";
+import LogoTGPQ from "../../../assets/images/tgpq/tgpq_logo.png";
+import LogoLootery from "../../../assets/images/tgpq/logo_lootery.png";
 
 export interface IGamesInformations {
   imageGame: string;
@@ -15,7 +15,7 @@ export const gamesInformations = [
     nameGame: "The Great Peasant's Quest",
     routeGame: "tgpq",
     descriptionGame:
-      "Welcome to the greatest of all great quest ! A quest of glory, of honor, of ... of ... Oh no... That's just you... That's embarassing haha...ha..ha. *Cough* *Cough* Well, erm, I guess that'll just be the story of you, a low class peasant. It's nice too, no? How will I announce that to the public now? It'll be a complete desaster ! We can't change how it is, huh? If your love for buying a new nice looking hat is huge enough, try to survive on the road to the city's market!",
+      "Welcome to the greatest of all great quest ! A quest of glory, of honor, of ... of ... Oh no... That's just you... That's embarassing haha...ha..ha. *Cough* *Cough* Well, erm, I guess that'll just be the story of you, a low class peasant. It's nice too, no? How will I announce that to the public now? It'll be a complete desaster ! We can't change how it is, huh? If your love for buying a new nice looking hat is huge enough, try to survive on the road to the big tree!",
   },
   {
     imageGame: LogoLootery,

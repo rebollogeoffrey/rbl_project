@@ -1,4 +1,4 @@
-import { ICharacterInfo } from "./tgpq_character_infos";
+import { ICharacterInfo } from "./data/tgpq_character_infos";
 import ProgressBar from "../general/general_progressbar";
 import HeartShape from "./tgpq_heart-shape";
 import "../../styles/tgpq/tgpq_card_abilities.css";
