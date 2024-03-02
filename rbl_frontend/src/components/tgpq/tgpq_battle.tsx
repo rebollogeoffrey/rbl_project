@@ -2,6 +2,7 @@ import TGPQButtonBattle from "./tgpq_buttonbattle";
 import TGPQChaCardBody from "./tgpq_card_body";
 import { characterInfos } from "./tgpq_character_infos";
 import TGPQTitle from "./tgpq_title";
+import "../../styles/tgpq/tgpq_battle.css";
 
 function TGPQBattle() {
   // TODO : Find a better way to feed fct with character info -> props for now ?
@@ -10,7 +11,6 @@ function TGPQBattle() {
   const characterInformations = { characterInfos };
   return (
     <div className="font-family-tgpq-regular">
-      <TGPQTitle title="Battle" howImportant={1} />
       <TGPQChaCardBody
         characterInfos={characterInformations.characterInfos[1]}
         isInColumn={false}
@@ -19,7 +19,10 @@ function TGPQBattle() {
         areStatsVisible={true}
         isHealthActualVisible={true}
       />
-      <TGPQTitle title="Attack or defend yourself" howImportant={2} />
+      <TGPQTitle
+        title="Choose to maximise your attack or defense for the next round"
+        howImportant={3}
+      />
       <TGPQButtonBattle />
       <TGPQChaCardBody
         characterInfos={characterInformations.characterInfos[0]}

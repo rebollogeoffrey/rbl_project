@@ -1,0 +1,6 @@
+/* To select ONLY the text before the attack and defend buttons */
+h3.tgpq-title:nth-child(2) {
+    max-width: 550px;
+    margin: auto;
+    text-align: center;
+}

@@ -1,5 +1,52 @@
-.tgpq-button-battle {}
+/* Container */
+.tgpq-button-battle {
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20%;
+}
 
-.tgpq-button-battle-attack {}
+.tgpq-button-battle-attack, .tgpq-button-battle-defend {
+    width: 150px;
+    height: 60px;
+    border-radius: 20% 30%;
+    -webkit-border-radius: 20% 30%;
+    -moz-border-radius: 20% 30%;
+    -ms-border-radius: 20% 30%;
+    -o-border-radius: 20% 30%;
+    cursor: pointer;
+}
 
-.tgpq-button-battle-defend {}
+.tgpq-button-battle-attack {
+    border: 5px solid var(--MediumRed);
+    background-color: var(--DarkRed);
+}
+
+.tgpq-button-battle-defend {
+    border: 5px solid var(--MediumBlue);
+    background-color: var(--DarkBlue);
+}
+
+/* -------- Selectors ----------- */
+/* visited */
+.tgpq-button-battle button:visited {
+    text-decoration: none;
+}
+
+/* mouse over */
+.tgpq-button-battle button:hover {
+    font-weight: bold;
+}
+
+/* selected */
+.tgpq-button-battle button:active {
+    box-shadow: inset 0px 0px 15px var(--NearWhite);
+}
+
+/* -------- Media ----------- */
+@media screen and (max-width: 600px) {
+    .tgpq-button-battle {
+        gap: 5%;
+    }
+}
