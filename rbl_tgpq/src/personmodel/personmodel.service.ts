@@ -3,6 +3,7 @@ import { CreatePersonModelDto } from './dto/create-personmodel.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Category, PersonModel } from './entities/personmodel.entity';
 import { Repository } from 'typeorm';
+import { UpdatePersonModelDto } from './dto/update-personmodel.dto';
 
 @Injectable()
 export class PersonModelService {
@@ -26,11 +27,11 @@ export class PersonModelService {
   }
 
   async update(
-    idPersonModel,
-    updatePersonModelDto,
+    idPersonModel: string,
+    updatePersonModelDto: UpdatePersonModelDto,
   ): Promise<PersonModel | undefined> {
-    updatePersonModelDto = [...idPersonModel, ...updatePersonModelDto];
-    return this.personModelRepository.save(updatePersonModelDto);
+    const updatePersonModel = { id: idPersonModel, ...updatePersonModelDto };
+    return this.personModelRepository.save(updatePersonModel);
   }
 
   async remove(id: string) {
@@ -44,5 +45,9 @@ export class PersonModelService {
     category: Category,
   ): Promise<PersonModel[] | undefined> {
     return this.personModelRepository.findBy({ category: category });
+  }
+
+  async getHero() {
+    return this.personModelRepository.findBy({ difficulty: 10 });
   }
 }

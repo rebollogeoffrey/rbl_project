@@ -10,6 +10,7 @@ import {
 import { PersonModelService } from './personmodel.service';
 import { CreatePersonModelDto } from './dto/create-personmodel.dto';
 import { UpdatePersonModelDto } from './dto/update-personmodel.dto';
+import { Category } from './entities/personmodel.entity';
 
 @Controller('personmodel')
 export class PersonModelController {
@@ -33,7 +34,7 @@ export class PersonModelController {
   @Patch(':id')
   update(
     @Param('id') idPersonModel: string,
-    @Body() updatePersonModelDto: UpdatePersonModelDto,
+    @Body('personModel') updatePersonModelDto: UpdatePersonModelDto,
   ) {
     return this.personModelService.update(idPersonModel, updatePersonModelDto);
   }
@@ -41,5 +42,15 @@ export class PersonModelController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.personModelService.remove(id);
+  }
+
+  @Get(':category')
+  getPersonModelByCategory(@Param('category') category: Category) {
+    return this.getPersonModelByCategory(category);
+  }
+
+  @Get('hero')
+  getHero() {
+    return this.getHero();
   }
 }

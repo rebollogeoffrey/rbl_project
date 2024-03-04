@@ -57,14 +57,6 @@ export class PersonController {
     return this.personService.startBattle(idHero);
   }
 
-  @Patch('victory/:hero/:monster')
-  endOfBattle(
-    @Param('hero') idHero: string,
-    @Param('monster') idMonster: string,
-  ) {
-    return this.personService.endOfBattle(idHero, idMonster);
-  }
-
   @Patch('shop/:hero/:item')
   shop(@Param('hero') idHero: string, @Param('item') idItem: string) {
     return this.personService.shop(idHero, idItem);

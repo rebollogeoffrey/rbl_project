@@ -4,7 +4,7 @@ import { CreatePersonDto } from './dto/create-person.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Person } from './entities/person.entity';
 import { MoreThan, Not, Repository } from 'typeorm';
-// import { FightPersonDto } from './dto/fight-person.dto';
+
 import { PersonModel } from '../personmodel/entities/personmodel.entity';
 import { Item, Stat_affected, Type_item } from '../item/entities/item.entity';
 
@@ -50,14 +50,19 @@ export class PersonService {
     return this.personRepository.findBy({ userId: userId });
   }
 
-  async endOfBattle(idHero: string, idMonster: string) {
+  private async battleVictory(idHero: string, idMonster: string) {
     const hero = await this.findById(idHero);
     const monster = await this.findById(idMonster);
+    this.remove(idMonster);
 
     return await this.personRepository.save({
       id: idHero,
       gold: hero.gold + monster.gold,
     });
+  }
+
+  private async battleDefeat(idUser: string) {
+    return await this.personRepository.delete({ userId: idUser });
   }
 
   private getDamage(strength: number, weapon?: number) {
@@ -148,7 +153,9 @@ export class PersonService {
     await this.update(hero.id, { ...hero, health: newHealthHero });
 
     if (newHealthMonster <= 0) {
-      this.remove(idMonster);
+      this.battleVictory(idHero, idMonster);
+    } else if (newHealthHero <= 0) {
+      this.battleDefeat(hero.userId);
     }
 
     return mode
@@ -161,11 +168,11 @@ export class PersonService {
           { attackMonsterSuccess },
         ]
       : [
-          newHealthHero,
-          newHealthMonster,
-          attackPointsMonster,
-          attackHeroSuccess,
-          attackMonsterSuccess,
+          { newHealthHero },
+          { newHealthMonster },
+          { attackPointsMonster },
+          { attackHeroSuccess },
+          { attackMonsterSuccess },
         ];
   }
 
