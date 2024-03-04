@@ -1,4 +1,5 @@
 import GameSelection from "../../components/hub/hub_gameselection";
+import { gamesInformations } from "../../components/hub/data/hub_hub_informations";
 import HubLogo from "../../components/hub/hub_logo";
 
 function GameSelectionPage() {
@@ -6,7 +7,7 @@ function GameSelectionPage() {
     <div className="font-family-hub">
       <HubLogo />
       <main>
-        <GameSelection />
+        <GameSelection gamesInformations={gamesInformations} />
       </main>
     </div>
   );

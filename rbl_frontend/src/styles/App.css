@@ -5,6 +5,7 @@
   color: var(--LightestOne);
 }
 
+/* Font families ------------*/
 .font-family-hub, .font-family-hub * {
   font-family: "Hub", Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 1px;
@@ -20,14 +21,31 @@
   font-size: larger;
 }
 
-.bg-tgpq-home {
-  background-image: url("../assets/images/tgpq/tgpq_bg_home.jpg");
+/* Background images ------------*/
+.bg-tgpq-home, .bg-tgpq-tavern, .bg-tgpq-map, .bg-tgpq-battle {
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.bg-tgpq-home {
+  background-image: url("../assets/images/tgpq/backgrounds/tgpq_bg_home.jpeg");
 }
 
 .bg-tgpq-tavern {
-  background-image: url("../assets/images/tgpq/tgpq_bg_tavern.jpg");
-  background-size: cover;
+  background-image: url("../assets/images/tgpq/backgrounds/tgpq_bg_tavern.png");
+}
+
+.bg-tgpq-map {
+  background-image: url("../assets/images/tgpq/backgrounds/tgpq_bg_map.png");
+}
+
+.bg-tgpq-battle {
+  background-image: url("../assets/images/tgpq/backgrounds/tgpq_bg_battle.jpeg");
 }
 
 body {
@@ -42,7 +60,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content: space-between;
+  min-width: 100vw;
+  justify-content: space-around;
 }
 
 @font-face {

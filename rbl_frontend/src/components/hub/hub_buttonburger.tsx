@@ -9,7 +9,6 @@ function ButtonBurger() {
   const { modalMenu, setModalMenu } = useContext(NavBarContext);
   const handleMenu = () => {
     setModalMenu(!modalMenu);
-    console.log("modalMenu :>> ", modalMenu);
   };
 
   return (

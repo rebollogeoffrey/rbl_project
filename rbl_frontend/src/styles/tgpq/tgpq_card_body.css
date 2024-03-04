@@ -1,0 +1,63 @@
+/* ---------- The Entire Card ----------*/
+.tgpq-card-body {
+    background-color: rgba(var(--NearWhiteRGBA), 0.6);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: auto;
+    margin: 2% 10%;
+}
+
+.tgpq-card-body div:nth-child(1) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.tgpq-card-body.column {
+    flex-direction: column;
+}
+
+.tgpq-card-body.row {
+    flex-direction: row;
+    gap: 5%;
+}
+
+.tgpq-card-body.row div {
+    width: 40%;
+}
+
+.tgpq-card-body.row img {
+    max-width: 200px;
+    max-height: 300px;
+}
+
+@media only screen and (max-width: 350px) {
+    .tgpq-card-body.row div {
+        width: 100%;
+    }
+
+    .tgpq-card-body.row img {
+        max-width: 100px;
+        max-height: 200px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .tgpq-card-body.row img {
+        max-width: 150px;
+        max-height: 200px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .tgpq-card-body {
+        margin: 2% 30%;
+    }
+}

@@ -8,6 +8,8 @@
   opacity: 50%;
 }
 
-.footer-constructor > p {
+
+.footer-constructor>p {
+  margin-top: 5px;
   font-size: smaller;
 }

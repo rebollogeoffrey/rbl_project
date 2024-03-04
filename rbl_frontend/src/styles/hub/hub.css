@@ -1,10 +1,12 @@
 :root {
   /* ----- Colors of hub ----- */
   --MediumRed: red;
+  --MediumBlue: blue;
   --NearBlack: #1e1e1e;
   --DarkBlue: #013260;
   --DarkRed: #491313;
   --NearWhite: #d9d9d9;
+  --NearWhiteRGBA: 217, 217, 217;
   --LightestOne: #ffffff;
   --DarkestOne: #000000;
   --Golden: #897b00;

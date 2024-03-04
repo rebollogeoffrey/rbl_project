@@ -9,7 +9,7 @@ form {
 }
 
 form>* {
-  font-size: 102%;
+  font-size: 150%;
 }
 
 label {
@@ -30,24 +30,29 @@ input {
 }
 
 input[type="submit"] {
-  margin-top: 4%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  padding: 2% 10%;
   color: white;
-  max-width: 40%;
-  width: 30%;
+  min-width: 30%;
   align-self: center;
 }
 
-#signin-button {
+.form-login>input[type="submit"] {
   background-color: var(--DarkRed);
 }
 
-#signup-button,
+.form-create>input[type="submit"],
 #modify-button {
   background-color: var(--DarkBlue);
 }
 
 @media only screen and (min-width: 1080px) {
+  .container-login, .container-create {
+    width: 40%;
+  }
+
   .container-modify {
-    width: 50%;
+    width: 100%;
   }
 }

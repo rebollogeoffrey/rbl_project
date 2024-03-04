@@ -1,20 +1,17 @@
-import TGPQDescription from "../../components/tgpq/tgpq_description";
+import TGPQDescription from "../../components/tgpq/tgpq_homeDescription";
 import TGPQTitle from "../../components/tgpq/tgpq_title";
 import TGPQLogo from "../../components/tgpq/tgpq_logo";
 import TGPQButtonNext from "../../components/tgpq/tgpq_buttonnext";
-import { Link } from "react-router-dom";
+import { gamesInformations } from "../../components/hub/data/hub_hub_informations";
+import "../../styles/App.css";
 
-function TGPQHomePage() {
+export default function TGPQHomePage() {
   return (
     <div className="font-family-tgpq-regular bg-tgpq-home">
-      <TGPQTitle />
+      <TGPQTitle title="The Great's Peasant Quest" howImportant={1} />
       <TGPQLogo />
-      <TGPQDescription />
-      <Link to="/selectCharacter">
-        <TGPQButtonNext />
-      </Link>
+      <TGPQDescription gameDescription={gamesInformations[0].descriptionGame} />
+      <TGPQButtonNext path="/selectCharacter" />
     </div>
   );
 }
-
-export default TGPQHomePage;

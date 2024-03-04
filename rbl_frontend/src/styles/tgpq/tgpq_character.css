@@ -1,12 +1,6 @@
-.tgpq-character-selected-name.is-visible {
-    color: var(--DarkestOne);
-    margin: auto;
-    text-align: center;
-}
-
-
-.tgpq-character-selected-img {
-    height: 100%;
+.tgpq-chaCard-img {
+    width: 100%;
     max-height: 500px;
-    width: auto;
+    height: auto;
+    object-fit: scale-down;
 }

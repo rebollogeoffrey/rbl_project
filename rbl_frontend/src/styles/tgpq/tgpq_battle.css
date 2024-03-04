@@ -1,0 +1,11 @@
+/* To select ONLY the text before the attack and defend buttons */
+h3.tgpq-title:nth-child(2) {
+    margin: auto;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    h3.tgpq-title:nth-child(2) {
+        max-width: 550px;
+    }
+}

@@ -1,0 +1,47 @@
+/* All the abilities of a card */
+.tgpq-card-abilities {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    padding-top: 0.1em;
+    align-items: flex-start;
+    flex-shrink: 2;
+}
+
+/*-------- Life --------*/
+/* Heart and text */
+.tgpq-card-abilities>.life {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+}
+
+/* Only the heart */
+.tgpq-card-abilities>.life>div {
+    top: 3px;
+    margin-right: 0.2em;
+    margin-left: 0.1em;
+}
+
+/*-------- Bars --------*/
+.tgpq-card-abilities .bar {
+    width: 100%;
+    margin-top: 0.3em;
+}
+
+/*-------- Texts --------*/
+.tgpq-card-abilities p {
+    color: var(--DarkestOne);
+    padding-right: 10px;
+    font-size: 25px;
+}
+
+/* First p of heart */
+.tgpq-card-abilities .life p:first-of-type {
+    font-weight: bold;
+}
+
+/* Every p of bars */
+.tgpq-card-abilities .bar p {
+    font-style: italic;
+}
