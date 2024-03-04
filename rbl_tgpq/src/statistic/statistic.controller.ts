@@ -30,7 +30,7 @@ export class StatisticController {
     return this.statisticService.findOne(id);
   }
 
-  @Get(':user')
+  @Get('user/:user')
   getStatisticByUserId(@Param('user') userId: string) {
     return this.statisticService.getStatisticByUserId(userId);
   }
@@ -46,5 +46,21 @@ export class StatisticController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.statisticService.remove(id);
+  }
+
+  @Patch('battleWin/:idUser/:typeMonster')
+  battleWin(
+    @Param('idUser') idUser: string,
+    @Param('typeMonster') typeMonster: string,
+  ) {
+    return this.statisticService.battleWin(idUser, typeMonster);
+  }
+
+  @Patch('campaignOver/:idUser/:status')
+  campaignOver(
+    @Param('idUser') idUser: string,
+    @Param('status') status: string,
+  ) {
+    return this.statisticService.campaignOver(idUser, status);
   }
 }

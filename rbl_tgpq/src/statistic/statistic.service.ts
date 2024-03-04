@@ -39,4 +39,28 @@ export class StatisticService {
   async getStatisticByUserId(idUser: string): Promise<Statistic[] | undefined> {
     return this.statisticRepository.findBy({ userId: idUser });
   }
+
+  async battleWin(idUser: string, typeMonster: string) {
+    const statBefore = await this.statisticRepository.findOne({
+      where: [{ userId: idUser }],
+    });
+
+    if (!statBefore.kills[typeMonster]) {
+      statBefore.kills[typeMonster] = 1;
+    } else {
+      statBefore.kills[typeMonster] += 1;
+    }
+
+    return await this.statisticRepository.save(statBefore);
+  }
+
+  async campaignOver(idUser: string, status: string) {
+    const statBefore = await this.statisticRepository.findOne({
+      where: [{ userId: idUser }],
+    });
+
+    status === '1' ? (statBefore.nb_win += 1) : (statBefore.nb_lose += 1);
+
+    return await this.statisticRepository.save(statBefore);
+  }
 }

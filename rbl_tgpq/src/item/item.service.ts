@@ -30,8 +30,7 @@ export class ItemService {
     idItem: number,
     updateItemDto: UpdateItemDto,
   ): Promise<Item | undefined> {
-    updateItemDto = { idItem, ...updateItemDto };
-    return this.itemRepository.save(updateItemDto);
+    return this.itemRepository.save({ idItem, ...updateItemDto });
   }
 
   async remove(id: string) {

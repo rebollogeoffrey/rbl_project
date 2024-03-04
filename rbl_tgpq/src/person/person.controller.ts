@@ -33,7 +33,7 @@ export class PersonController {
   @Patch(':id')
   update(
     @Param('id') idPerson: string,
-    @Body() updatePersonDto: UpdatePersonDto,
+    @Body('person') updatePersonDto: UpdatePersonDto,
   ) {
     return this.personService.update(idPerson, updatePersonDto);
   }
@@ -52,8 +52,21 @@ export class PersonController {
     return this.personService.battle(idHero, idMonster, mode);
   }
 
-  @Patch('startBattle/:hero/:user')
-  startBattle(@Param('hero') idHero: string, @Param('user') idUser: string) {
-    return this.personService.startBattle(idHero, idUser);
+  @Patch('startBattle/:hero')
+  startBattle(@Param('hero') idHero: string) {
+    return this.personService.startBattle(idHero);
+  }
+
+  @Patch('victory/:hero/:monster')
+  endOfBattle(
+    @Param('hero') idHero: string,
+    @Param('monster') idMonster: string,
+  ) {
+    return this.personService.endOfBattle(idHero, idMonster);
+  }
+
+  @Patch('shop/:hero/:item')
+  shop(@Param('hero') idHero: string, @Param('item') idItem: string) {
+    return this.personService.shop(idHero, idItem);
   }
 }

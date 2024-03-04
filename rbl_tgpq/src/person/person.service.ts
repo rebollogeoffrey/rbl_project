@@ -3,10 +3,10 @@ import { Injectable } from '@nestjs/common';
 import { CreatePersonDto } from './dto/create-person.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Person } from './entities/person.entity';
-import { Repository } from 'typeorm';
+import { MoreThan, Not, Repository } from 'typeorm';
 // import { FightPersonDto } from './dto/fight-person.dto';
 import { PersonModel } from '../personmodel/entities/personmodel.entity';
-import { Stat_affected, Type_item } from '../item/entities/item.entity';
+import { Item, Stat_affected, Type_item } from '../item/entities/item.entity';
 
 @Injectable()
 export class PersonService {
@@ -15,10 +15,12 @@ export class PersonService {
     private personRepository: Repository<Person>,
     @InjectRepository(PersonModel)
     private personModelRepository: Repository<PersonModel>,
+    @InjectRepository(Item)
+    private itemRepository: Repository<Item>,
   ) {}
 
   create(createPersonDto: CreatePersonDto) {
-    return this.personRepository.create(createPersonDto);
+    return this.personRepository.save(createPersonDto);
   }
 
   findAll() {
@@ -28,6 +30,7 @@ export class PersonService {
   findById(id: string): Promise<Person | undefined> {
     return this.personRepository.findOne({
       where: [{ id }],
+      relations: ['items', 'personModel'],
     });
   }
 
@@ -47,8 +50,14 @@ export class PersonService {
     return this.personRepository.findBy({ userId: userId });
   }
 
-  async endOfBattle(personId: string, gold: number) {
-    return this.personRepository.save({ id: personId, gold });
+  async endOfBattle(idHero: string, idMonster: string) {
+    const hero = await this.findById(idHero);
+    const monster = await this.findById(idMonster);
+
+    return await this.personRepository.save({
+      id: idHero,
+      gold: hero.gold + monster.gold,
+    });
   }
 
   private getDamage(strength: number, weapon?: number) {
@@ -72,23 +81,12 @@ export class PersonService {
       dodge = this.isDodgeSuccess(dod);
       dexterity = this.isDexteritySuccess(dex);
     } while ((dodge && dexterity) || (!dodge && !dexterity));
-    return dex;
+    return dexterity;
   }
 
-  async battle(
-    idHero: string,
-    idMonster: string,
-    mode: boolean,
-    healthMonster?: number,
-  ) {
+  async battle(idHero: string, idMonster: string, mode: boolean) {
     const hero = await this.findById(idHero);
-    const monster = await this.personModelRepository.findOne({
-      where: [{ id: idMonster }],
-    });
-
-    if (!healthMonster) {
-      healthMonster = monster.health_max;
-    }
+    const monster = await this.findById(idMonster);
 
     // if mode true : fight else defend
     let itemStrengthValue = 0;
@@ -118,42 +116,53 @@ export class PersonService {
       itemStrengthValue,
     );
 
-    const attackPointsMonster = this.getDamage(monster.strength);
+    const attackPointsMonster = this.getDamage(monster.personModel.strength);
 
     const attackHeroSuccess = this.isAttackSuccess(
-      monster.dodge,
-      hero.personModel.dexterity + itemDexterityValue,
+      monster.personModel.dodge,
+      mode
+        ? hero.personModel.dexterity + itemDexterityValue + 10
+        : hero.personModel.dexterity + itemDexterityValue,
     );
 
     const attackMonsterSuccess = this.isAttackSuccess(
       mode
-        ? hero.personModel.dodge + itemDodgeValue + 10
-        : hero.personModel.dodge + itemDodgeValue,
-      monster.dexterity,
+        ? hero.personModel.dodge + itemDodgeValue
+        : hero.personModel.dodge + itemDodgeValue + 10,
+      monster.personModel.dexterity,
     );
 
-    const newHealthHero = attackMonsterSuccess
-      ? hero.health - attackPointsMonster
-      : hero.health;
+    const newHealthMonster = attackHeroSuccess
+      ? monster.health - attackPointsHero
+      : monster.health;
 
-    healthMonster = attackHeroSuccess
-      ? healthMonster - attackPointsHero
-      : healthMonster;
+    await this.update(monster.id, { ...monster, health: newHealthMonster });
 
-    this.update(hero.id, { health: newHealthHero });
+    const newHealthHero =
+      newHealthMonster <= 0
+        ? hero.personModel.health_max
+        : attackMonsterSuccess
+        ? hero.health - attackPointsMonster
+        : hero.health;
+
+    await this.update(hero.id, { ...hero, health: newHealthHero });
+
+    if (newHealthMonster <= 0) {
+      this.remove(idMonster);
+    }
 
     return mode
       ? [
-          newHealthHero,
-          healthMonster,
-          attackPointsHero,
-          attackPointsMonster,
-          attackHeroSuccess,
-          attackMonsterSuccess,
+          { newHealthHero },
+          { newHealthMonster },
+          { attackPointsHero },
+          { attackPointsMonster },
+          { attackHeroSuccess },
+          { attackMonsterSuccess },
         ]
       : [
           newHealthHero,
-          healthMonster,
+          newHealthMonster,
           attackPointsMonster,
           attackHeroSuccess,
           attackMonsterSuccess,
@@ -164,20 +173,43 @@ export class PersonService {
     return Math.floor(Math.random() * max);
   }
 
-  async startBattle(idHero: string, idUser: string) {
+  async startBattle(idHero: string) {
     const hero = await this.findById(idHero);
 
-    const allMonster = this.personModelRepository.findBy({ difficulty: 1 });
-    const oneRandomMonster =
-      allMonster[this.getRandomInt((await allMonster).length)];
-    const monster = await this.create({
+    const allMonster = await this.personModelRepository.findBy({
+      difficulty: 1,
+    });
+
+    const oneRandomMonster = allMonster[this.getRandomInt(allMonster.length)];
+
+    await this.create({
       gold: this.getRandomInt(100),
       health: oneRandomMonster.health_max,
-      userId: idUser,
+      userId: hero.userId,
       personModel: oneRandomMonster,
       items: [],
     });
 
-    return [hero, monster];
+    const monsterCreated = await this.personRepository.findOne({
+      where: [{ userId: hero.userId, health: MoreThan(0), id: Not(hero.id) }],
+      relations: ['items', 'personModel'],
+    });
+
+    return [hero, monsterCreated];
+  }
+
+  async shop(idPerson: string, idItem: string) {
+    const hero = await this.findById(idPerson);
+    const itemBought = await this.itemRepository.findOne({
+      where: [{ id: idItem }],
+    });
+
+    return hero.gold >= 100
+      ? (hero.items.push(itemBought),
+        await this.update(idPerson, {
+          ...hero,
+          gold: hero.gold - 100,
+        }))
+      : 'Not Enougth Gold';
   }
 }

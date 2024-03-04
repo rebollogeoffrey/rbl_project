@@ -26,7 +26,6 @@ export class Statistic {
 
   @Column({
     type: 'json',
-    default: '{}',
     array: false,
   })
   kills: Array<{ category: Category; nb_killed: number }>;

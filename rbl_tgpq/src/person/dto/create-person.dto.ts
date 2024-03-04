@@ -19,5 +19,5 @@ export class CreatePersonDto {
   readonly personModel: PersonModel;
 
   @IsNotEmpty()
-  readonly items: Item[];
+  readonly items?: Item[];
 }
