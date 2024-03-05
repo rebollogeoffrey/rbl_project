@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import NavBarContext from "../../contexts/hub/NavbarContext";
+import NavBarContext from "../../../contexts/hub/NavbarContext";
 import { Link } from "react-router-dom";
 import LogoBurger from "./hub_logo";
 import "../../styles/hub/hub_menu.css";

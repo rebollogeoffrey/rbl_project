@@ -1,6 +1,6 @@
-import GameSelection from "../../components/hub/hub_gameselection";
-import { gamesInformations } from "../../components/hub/data/hub_hub_informations";
-import HubLogo from "../../components/hub/hub_logo";
+import GameSelection from "../../components/tgpq/hub/hub_gameselection";
+import { gamesInformations } from "../../components/tgpq/hub/data/hub_hub_informations";
+import HubLogo from "../../components/tgpq/hub/hub_logo";
 
 function GameSelectionPage() {
   return (

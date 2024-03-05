@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import NavBarContext from "../../contexts/hub/NavbarContext";
+import NavBarContext from "../../../contexts/hub/NavbarContext";
 
 import sword from "../../assets/images/hub/sword_burgermenu.png";
 
