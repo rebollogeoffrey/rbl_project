@@ -42,7 +42,6 @@ services:
       - rbl_network
     depends_on:
       - database
-    # entrypoint: "npm run migration:up"
     environment:
       DATABASE_HOST: "${DATABASE_HOST}"
       DATABASE_PORT: "${DATABASE_PORT}"
