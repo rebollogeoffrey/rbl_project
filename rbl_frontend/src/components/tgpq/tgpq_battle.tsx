@@ -4,19 +4,13 @@ import TGPQChaCardBody from "./tgpq_card_body";
 import TGPQTitle from "./tgpq_title";
 import "../../styles/tgpq/tgpq_battle.css";
 import TGPQContext from "../../contexts/tgpq/TGPQContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 function TGPQBattle() {
-  const { personHero, personMonster, setPersonHero, setPersonMonster } =
-    useContext(TGPQContext);
+  const { personHero, personMonster } = useContext(TGPQContext);
   // TODO : Find a better way to feed fct with character info -> props for now ?
   // TODO : Find a better way to feed fct with character info -> Hook ? Witch one ?
   // TODO : Handle images from database
-
-  useEffect(() => {
-    setPersonHero(personHero);
-    setPersonMonster(personMonster);
-  }, [personHero, personMonster, setPersonHero, setPersonMonster]);
 
   return (
     <div className="font-family-tgpq-regular">

@@ -32,7 +32,7 @@ export default function TGPQButtonBattle() {
     return (
       <div className="tgpq-button-battle">
         <Link to={"/tgpq"}>
-          <button className="tgpq-button-battle-defend"> You Have Lost </button>
+          <button className="tgpq-button-battle-defend"> LOOSE </button>
         </Link>
       </div>
     );
@@ -44,8 +44,7 @@ export default function TGPQButtonBattle() {
             className="tgpq-button-battle-attack"
             onClick={() => locationsArray.pop()}
           >
-            {" "}
-            You Have Win{" "}
+            WIN
           </button>
         </Link>
       </div>

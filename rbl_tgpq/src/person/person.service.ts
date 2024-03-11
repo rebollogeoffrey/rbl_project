@@ -152,7 +152,10 @@ export class PersonService {
         ? monster.health - attackPointsHero
         : monster.health;
 
-    await this.update(monster.id, { ...monster, health: newHealthMonster });
+    const newMonster = await this.update(monster.id, {
+      ...monster,
+      health: newHealthMonster,
+    });
 
     const newHealthHero =
       newHealthMonster <= 0
@@ -161,7 +164,10 @@ export class PersonService {
         ? hero.health - attackPointsMonster
         : hero.health;
 
-    await this.update(hero.id, { ...hero, health: newHealthHero });
+    const newHero = await this.update(hero.id, {
+      ...hero,
+      health: newHealthHero,
+    });
 
     if (newHealthMonster <= 0) {
       this.battleVictory(idHero, idMonster);
@@ -177,8 +183,8 @@ export class PersonService {
       { attackPointsMonster },
       { attackHeroSuccess },
       { attackMonsterSuccess },
-      hero,
-      monster,
+      newHero,
+      newMonster,
     ];
   }
 

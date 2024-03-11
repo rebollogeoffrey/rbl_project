@@ -47,6 +47,7 @@ export default function TGPQHomePage() {
         imageUrl: ImgSign,
       },
     ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

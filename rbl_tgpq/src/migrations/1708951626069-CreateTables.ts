@@ -31,12 +31,12 @@ export class CreateTables1708951626069 implements MigrationInterface {
     await queryRunner.query(
       `INSERT INTO \`person_model\` (\`id\`, \`name\`, \`health_max\`, \`strength\`, \`dexterity\`, \`dodge\`, \`description\`, \`url_image\`, \`difficulty\`, \`category\`, \`created_at\`, \`updated_at\`)
         VALUES 
-          ('1a1e17d3-9f9d-4c48-8c5a-928b0fe8d84d', 'Dragon', 500, 100, 50, 20, 'A fierce dragon guarding its treasure.', '../../../assets/images/tgpq/persons/monsters/tgpq_monster_dragon.png', 3, 'ELEMENTAL', DEFAULT, DEFAULT),
-          ('2b2f28e1-c443-4a78-bb23-456c78901234', 'Goblin', 70, 10, 15, 5, 'A mischievous goblin causing trouble.', '../../../assets/images/tgpq/persons/monsters/tgpq_monster_goblin.png', 1, 'GOLEM', DEFAULT, DEFAULT),
-          ('2b2f28e1-c443-4a78-bb23-456c78901269', 'Gobltwo', 70, 10, 15, 5, 'A second mischievous goblin causing trouble.', '../../../assets/images/tgpq/persons/monsters/tgpq_monster_gobltwo.png', 1, 'GOLEM', DEFAULT, DEFAULT),
-          ('2b2f28e1-c443-4a78-bb23-456c78901288', 'Goblthird', 70, 10, 15, 5, 'A third mischievous goblin causing trouble.', '../../../assets/images/tgpq/persons/monsters/tgpq_monster_goblthird.png', 1, 'GOLEM', DEFAULT, DEFAULT),
-          ('3c3d39f8-76a5-4d72-aaf7-987654321abc', 'Wizard', 50, 20, 30, 10, 'A wise wizard casting powerful spells.', '../../../assets/images/tgpq/persons/wizard-image.jpg', 2, 'MAGIC', DEFAULT, DEFAULT),
-          ('3c3d39f8-76a5-4d72-aaf7-987654321def', 'Hero', 100, 30, 25, 25, 'Your hero which is going to defeat everything.', '../../../assets/images/tgpq/persons/heroes/tgpq_character_peasant.png', 10, 'HERO', DEFAULT, DEFAULT);`,
+          ('1a1e17d3-9f9d-4c48-8c5a-928b0fe8d84d', 'Dragon', 500, 100, 50, 20, 'A fierce dragon guarding its treasure.', 'monsters/tgpq_monster_dragon.png', 3, 'ELEMENTAL', DEFAULT, DEFAULT),
+          ('2b2f28e1-c443-4a78-bb23-456c78901234', 'Goblin', 70, 10, 15, 5, 'A mischievous goblin causing trouble.', 'monsters/tgpq_monster_goblin.png', 1, 'GOLEM', DEFAULT, DEFAULT),
+          ('2b2f28e1-c443-4a78-bb23-456c78901269', 'Gobltwo', 70, 10, 15, 5, 'A second mischievous goblin causing trouble.', 'monsters/tgpq_monster_gobltwo.png', 1, 'GOLEM', DEFAULT, DEFAULT),
+          ('2b2f28e1-c443-4a78-bb23-456c78901288', 'Goblthird', 70, 10, 15, 5, 'A third mischievous goblin causing trouble.', 'monsters/tgpq_monster_goblthird.png', 1, 'GOLEM', DEFAULT, DEFAULT),
+          ('3c3d39f8-76a5-4d72-aaf7-987654321abc', 'Wizard', 50, 20, 30, 10, 'A wise wizard casting powerful spells.', 'wizard-image.jpg', 2, 'MAGIC', DEFAULT, DEFAULT),
+          ('3c3d39f8-76a5-4d72-aaf7-987654321def', 'Hero', 100, 30, 25, 25, 'Your hero which is going to defeat everything.', 'heroes/tgpq_character_peasant.png', 10, 'HERO', DEFAULT, DEFAULT);`,
     );
     await queryRunner.query(
       `INSERT INTO \`item\` (\`id\`, \`name\`, \`price\`, \`url_image\`, \`stat_affected\`, \`value\`, \`type\`, \`created_at\`, \`updated_at\`) 
