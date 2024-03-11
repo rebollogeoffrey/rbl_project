@@ -1,36 +1,34 @@
 import "../../styles/tgpq/tgpq_maplocations.css";
 import { Link } from "react-router-dom";
-import ImgSign from "../../assets/images/tgpq/locations/tgpq_location_direction-sign.png";
-import ImgHugeForest from "../../assets/images/tgpq/locations/tgpq_location_huge-forest.png";
-import ImgVillage from "../../assets/images/tgpq/locations/tgpq_location_village.png";
-import ImgCave from "../../assets/images/tgpq/locations/tgpq_location_cave.png";
-import ImgOldTree from "../../assets/images/tgpq/locations/tgpq_location_old-tree.png";
+import TGPQContext from "../../contexts/tgpq/TGPQContext";
+import { useContext } from "react";
+import axios from "axios";
+import TGPQButtonNext from "./tgpq_buttonnext";
 
 function TGPQMapLocations() {
+  const { locationsArray, setPersonMonster, idUser } = useContext(TGPQContext);
   // WARNING : DO NOT CHANGE THE ORDER OF THESE LOCATIONS, THEY ARE USED FOR THE MAP !!!
   // WARNING : The FIRST visitable MUST be the LAST location in the array so it can be deleted when visited without changes the location's index
-  const locationsArray = [
-    {
-      locationName: "Fifth: The old tree",
-      imageUrl: ImgOldTree,
-    },
-    {
-      locationName: "Fourth : Cave",
-      imageUrl: ImgCave,
-    },
-    {
-      locationName: "Third: Village",
-      imageUrl: ImgVillage,
-    },
-    {
-      locationName: "Second: Huge Forest",
-      imageUrl: ImgHugeForest,
-    },
-    {
-      locationName: "First: sign",
-      imageUrl: ImgSign,
-    },
-  ];
+
+  const getMonster = () => {
+    axios
+      .patch(`http://localhost:8261/person/createMonster/${idUser}`)
+      .then((res) => {
+        setPersonMonster(res.data);
+      })
+      .catch((err) => {
+        console.log("err :>> ", err);
+      });
+    console.log("locationsArray :>> ", locationsArray);
+  };
+
+  if (!locationsArray[0]) {
+    return (
+      <div>
+        <TGPQButtonNext path="/tgpq" />
+      </div>
+    );
+  }
 
   return (
     <div className="tgpq_map">
@@ -39,7 +37,7 @@ function TGPQMapLocations() {
         if (index === locationsArray.length - 1) {
           return (
             <Link to="/battle" className="tgpq_map_location">
-              <button>
+              <button onClick={() => getMonster()}>
                 <img src={location.imageUrl} alt={location.locationName} />
               </button>
             </Link>

@@ -1,6 +1,6 @@
-import CreateAccountForm from "../../components/tgpq/hub/hub_formcreateaccount";
-import Login from "../../components/tgpq/hub/hub_formlogin";
-import HubLogo from "../../components/tgpq/hub/hub_logo";
+import CreateAccountForm from "../../components/hub/hub_formcreateaccount";
+import Login from "../../components/hub/hub_formlogin";
+import HubLogo from "../../components/hub/hub_logo";
 
 function LoginPage() {
   return (

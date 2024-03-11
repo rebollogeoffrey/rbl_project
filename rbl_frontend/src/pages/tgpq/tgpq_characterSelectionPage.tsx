@@ -1,15 +1,29 @@
 import TGPQButtonNext from "../../components/tgpq/tgpq_buttonnext";
 import TGPQCardBody from "../../components/tgpq/tgpq_card_body";
 import TGPQTitle from "../../components/tgpq/tgpq_title";
-import { characterInfos } from "../../components/tgpq/data/tgpq_character_infos";
+import axios from "axios";
+import { useContext, useEffect } from "react";
+import TGPQContext from "../../contexts/tgpq/TGPQContext";
 
 export default function TGPQCharacterSelectionPage() {
-  const characterInformations = { characterInfos };
+  const { idUser, personHero, setPersonHero } = useContext(TGPQContext);
+
+  useEffect(() => {
+    axios
+      .patch(`http://localhost:8261/person/createHero/${idUser}`)
+      .then((res) => {
+        setPersonHero(res.data);
+      })
+      .catch((err) => {
+        console.log("err :>> ", err);
+      });
+  }, []);
+
   return (
     <div className="font-family-tgpq-regular bg-tgpq-tavern">
       <TGPQTitle title="Select your character" howImportant={2} />
       <TGPQCardBody
-        characterInfos={characterInformations.characterInfos[0]}
+        personInfos={personHero}
         isInColumn={true}
         isNameVisible={true}
         isCharacterImageVisible={true}

@@ -1,28 +1,26 @@
-import { ICharacterInfo } from "./data/tgpq_character_infos";
+import { IPerson } from "./data/tgpq_character_infos";
 import ProgressBar from "../general/general_progressbar";
 import HeartShape from "./tgpq_heart-shape";
 import "../../styles/tgpq/tgpq_card_abilities.css";
 
 export default function TGPQCardAbilities(props: {
   isHealthActualVisible: boolean;
-  characterInfos: ICharacterInfo;
+  personInfos: IPerson;
 }) {
   return (
     <div className="tgpq-card-abilities">
       <span className="life">
-        {props.isHealthActualVisible ? (
-          <p>{props.characterInfos.health_actual}</p>
-        ) : null}
+        {props.isHealthActualVisible ? <p>{props.personInfos.health}</p> : null}
         <HeartShape />
-        <p>{props.characterInfos.health_max}</p>
+        <p>{props.personInfos.personModel.health_max}</p>
       </span>
       <span className="bar">
         <p>Strengh</p>
         <ProgressBar
           bgColorOuter="var(--NearBlack)"
           bgColorInner="var(--GameTGPQ)"
-          progress={props.characterInfos.strengh}
-          textDisplayed={props.characterInfos.strengh.toString()}
+          progress={props.personInfos.personModel.strength}
+          textDisplayed={props.personInfos.personModel.strength.toString()}
           borderRadPx={8}
         />
       </span>
@@ -31,8 +29,8 @@ export default function TGPQCardAbilities(props: {
         <ProgressBar
           bgColorOuter="var(--NearBlack)"
           bgColorInner="var(--GameTGPQ)"
-          progress={props.characterInfos.dexterity}
-          textDisplayed={props.characterInfos.dexterity.toString()}
+          progress={props.personInfos.personModel.dexterity}
+          textDisplayed={props.personInfos.personModel.dexterity.toString()}
           borderRadPx={8}
         />
       </span>
@@ -41,8 +39,8 @@ export default function TGPQCardAbilities(props: {
         <ProgressBar
           bgColorOuter="var(--NearBlack)"
           bgColorInner="var(--GameTGPQ)"
-          progress={props.characterInfos.dodge}
-          textDisplayed={props.characterInfos.dodge.toString()}
+          progress={props.personInfos.personModel.dodge}
+          textDisplayed={props.personInfos.personModel.dodge.toString()}
           borderRadPx={8}
         />
       </span>

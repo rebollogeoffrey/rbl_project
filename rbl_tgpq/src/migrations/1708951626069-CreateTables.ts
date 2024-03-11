@@ -31,24 +31,23 @@ export class CreateTables1708951626069 implements MigrationInterface {
     await queryRunner.query(
       `INSERT INTO \`person_model\` (\`id\`, \`name\`, \`health_max\`, \`strength\`, \`dexterity\`, \`dodge\`, \`description\`, \`url_image\`, \`difficulty\`, \`category\`, \`created_at\`, \`updated_at\`)
         VALUES 
-          ('1a1e17d3-9f9d-4c48-8c5a-928b0fe8d84d', 'Dragon', 500, 100, 50, 20, 'A fierce dragon guarding its treasure.', 'https://example.com/dragon-image.jpg', 3, 'ELEMENTAL', DEFAULT, DEFAULT),
-          ('2b2f28e1-c443-4a78-bb23-456c78901234', 'Goblin', 30, 10, 15, 5, 'A mischievous goblin causing trouble.', 'https://example.com/goblin-image.jpg', 1, 'GOLEM', DEFAULT, DEFAULT),
-          ('2b2f28e1-c443-4a78-bb23-456c78901269', 'Gobltwo', 30, 10, 15, 5, 'A second mischievous goblin causing trouble.', 'https://example.com/goblin-image.jpg', 1, 'GOLEM', DEFAULT, DEFAULT),
-          ('2b2f28e1-c443-4a78-bb23-456c78901288', 'Goblthird', 30, 10, 15, 5, 'A third mischievous goblin causing trouble.', 'https://example.com/goblin-image.jpg', 1, 'GOLEM', DEFAULT, DEFAULT),
-          ('3c3d39f8-76a5-4d72-aaf7-987654321abc', 'Wizard', 50, 20, 30, 10, 'A wise wizard casting powerful spells.', 'https://example.com/wizard-image.jpg', 2, 'MAGIC', DEFAULT, DEFAULT),
-          ('3c3d39f8-76a5-4d72-aaf7-987654321def', 'Hero', 100, 30, 25, 25, 'Your hero which is going to defeat everything.', 'https://example.com/hero-image.jpg', 10, 'HERO', DEFAULT, DEFAULT);`,
+          ('1a1e17d3-9f9d-4c48-8c5a-928b0fe8d84d', 'Dragon', 500, 100, 50, 20, 'A fierce dragon guarding its treasure.', '../../../assets/images/tgpq/persons/monsters/tgpq_monster_dragon.png', 3, 'ELEMENTAL', DEFAULT, DEFAULT),
+          ('2b2f28e1-c443-4a78-bb23-456c78901234', 'Goblin', 70, 10, 15, 5, 'A mischievous goblin causing trouble.', '../../../assets/images/tgpq/persons/monsters/tgpq_monster_goblin.png', 1, 'GOLEM', DEFAULT, DEFAULT),
+          ('2b2f28e1-c443-4a78-bb23-456c78901269', 'Gobltwo', 70, 10, 15, 5, 'A second mischievous goblin causing trouble.', '../../../assets/images/tgpq/persons/monsters/tgpq_monster_gobltwo.png', 1, 'GOLEM', DEFAULT, DEFAULT),
+          ('2b2f28e1-c443-4a78-bb23-456c78901288', 'Goblthird', 70, 10, 15, 5, 'A third mischievous goblin causing trouble.', '../../../assets/images/tgpq/persons/monsters/tgpq_monster_goblthird.png', 1, 'GOLEM', DEFAULT, DEFAULT),
+          ('3c3d39f8-76a5-4d72-aaf7-987654321abc', 'Wizard', 50, 20, 30, 10, 'A wise wizard casting powerful spells.', '../../../assets/images/tgpq/persons/wizard-image.jpg', 2, 'MAGIC', DEFAULT, DEFAULT),
+          ('3c3d39f8-76a5-4d72-aaf7-987654321def', 'Hero', 100, 30, 25, 25, 'Your hero which is going to defeat everything.', '../../../assets/images/tgpq/persons/heroes/tgpq_character_peasant.png', 10, 'HERO', DEFAULT, DEFAULT);`,
     );
     await queryRunner.query(
       `INSERT INTO \`item\` (\`id\`, \`name\`, \`price\`, \`url_image\`, \`stat_affected\`, \`value\`, \`type\`, \`created_at\`, \`updated_at\`) 
         VALUES 
-    ('1d654e6a-9326-4c88-a6bd-7f103e537db1', 'Small Sword', 100, 'https://example.com/sword-image.jpg', 'STRENGTH', 10, 'HAND', DEFAULT, DEFAULT),
-    ('3f8c59b2-7e18-45ea-82f5-9c3b4fe04f65', 'Leather Armor', 100, 'https://example.com/armor-image.jpg', 'DODGE', 10, 'BODY', DEFAULT, DEFAULT);`,
+    ('1d654e6a-9326-4c88-a6bd-7f103e537db1', 'Small Sword', 100, '../../../assets/images/tgpq/items/tgpq_item_sword-small.png', 'STRENGTH', 10, 'HAND', DEFAULT, DEFAULT),
+    ('3f8c59b2-7e18-45ea-82f5-9c3b4fe04f65', 'Leather Armor', 100, '../../../assets/images/tgpq/items/tgpq_item_shield.png', 'DODGE', 10, 'BODY', DEFAULT, DEFAULT);`,
     );
     await queryRunner.query(
       `INSERT INTO \`person\` (\`id\`, \`gold\`, \`health\`, \`userId\`, \`created_at\`, \`updated_at\`, \`personModelId\`)
       VALUES
-        ('4d4e16a2-9af9-43a6-b4c8-c5a0e8d84d1a', 100, 100, 'c90e1467-a6d7-4a75-a544-c86a0e29e7a2', DEFAULT, DEFAULT, '3c3d39f8-76a5-4d72-aaf7-987654321def'),
-        ('5e5f27b3-8c21-4b89-bc32-789012345678', 50, 100, 'c90e1467-a6d7-4a75-b666-c86a0e29e7a2', DEFAULT, DEFAULT, '3c3d39f8-76a5-4d72-aaf7-987654321def');`,
+        ('4d4e16a2-9af9-43a6-b4c8-c5a0e8d84d1a', 100, 100, 'c90e1467-a6d7-4a75-a544-c86a0e29e7a2', DEFAULT, DEFAULT, '3c3d39f8-76a5-4d72-aaf7-987654321def');`,
     );
     await queryRunner.query(
       `INSERT INTO \`statistic\` (\`id\`, \`nb_win\`, \`nb_lose\`, \`kills\`, \`userId\`, \`created_at\`, \`updated_at\`)
@@ -60,8 +59,7 @@ export class CreateTables1708951626069 implements MigrationInterface {
       `INSERT INTO \`person_items_item\` (\`personId\`, \`itemId\`)
         VALUES 
           ('4d4e16a2-9af9-43a6-b4c8-c5a0e8d84d1a', '1d654e6a-9326-4c88-a6bd-7f103e537db1'),
-          ('4d4e16a2-9af9-43a6-b4c8-c5a0e8d84d1a', '3f8c59b2-7e18-45ea-82f5-9c3b4fe04f65'),
-          ('5e5f27b3-8c21-4b89-bc32-789012345678', '1d654e6a-9326-4c88-a6bd-7f103e537db1');`,
+          ('4d4e16a2-9af9-43a6-b4c8-c5a0e8d84d1a', '3f8c59b2-7e18-45ea-82f5-9c3b4fe04f65');`,
     );
   }
 

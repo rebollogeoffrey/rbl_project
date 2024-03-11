@@ -44,10 +44,10 @@ export class PersonModelService {
   async getPersonModelByCategory(
     category: Category,
   ): Promise<PersonModel[] | undefined> {
-    return this.personModelRepository.findBy({ category: category });
+    return await this.personModelRepository.findBy({ category: category });
   }
 
-  async getHero() {
-    return this.personModelRepository.findBy({ difficulty: 10 });
+  async getHero(name: string): Promise<PersonModel[] | undefined> {
+    return await this.personModelRepository.findBy({ name: name });
   }
 }

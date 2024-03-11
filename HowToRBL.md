@@ -9,13 +9,26 @@ Stop the services or applications which are currently using :
 - localhost:80
 - mysql
 
+To know which port is already used, open a cmd and write ONE OF THE FOLLOWING :
+
+To see all the applications using a port :
+
+- `sudo lsof -i -P -n | grep LISTEN`
+
+To see a specific port _such as 80 here_ :
+
+- `sudo lsof -i:80`
+
+---
+
 To stop them open the cmd and write :
 
 - `systemctl stop NAME ` (replace NAME with the name of the service).
 
-For example :
+_For example :_
 
-> `systemctl stop mysql` > `systemctl stop apache2`
+- `systemctl stop mysql`
+- `systemctl stop apache2`
 
 ### Remove all images not usefull
 
@@ -50,6 +63,12 @@ If you made some changes and need to rebuild a container without disrupting the 
 
 To run the project and test it's functionnality you will need datas.
 
+### Delete old Datas
+
+You need to delete the folder `data`in order to continue. If you don't the migration won't go through and therefore the application won't work.
+
+- `sudo rm -rf data/`
+
 ### Connection to Docker Container
 
 The database are already created but empty, to rectified this problem you need to connect to the two containers using a database.
@@ -64,3 +83,7 @@ This will allow you to go inside the container :
 Now, you can use the command to send the creation of the tables and their content by using this :
 
 > `npm run migration:up`
+
+Once the migration done write : `exit`
+
+And repeat the operation for the second container.

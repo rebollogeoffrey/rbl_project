@@ -44,13 +44,13 @@ export class PersonModelController {
     return this.personModelService.remove(id);
   }
 
-  @Get(':category')
+  @Get('category/:category')
   getPersonModelByCategory(@Param('category') category: Category) {
-    return this.getPersonModelByCategory(category);
+    return this.personModelService.getPersonModelByCategory(category);
   }
 
-  @Get('hero')
-  getHero() {
-    return this.getHero();
+  @Get('gethero/:name')
+  getHero(@Param('name') name: string) {
+    return this.personModelService.getHero(name);
   }
 }

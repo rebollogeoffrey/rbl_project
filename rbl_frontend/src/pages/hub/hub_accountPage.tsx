@@ -1,5 +1,5 @@
-import ModifyAccountForm from "../../components/tgpq/hub/hub_formmodifyaccount";
-import HubLogo from "../../components/tgpq/hub/hub_logo";
+import ModifyAccountForm from "../../components/hub/hub_formmodifyaccount";
+import HubLogo from "../../components/hub/hub_logo";
 
 function AccountPage() {
   return (

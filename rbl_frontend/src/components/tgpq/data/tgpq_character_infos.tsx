@@ -1,47 +1,54 @@
 /* 
-TODO : Grab real data from database
-
 TODO : REGARDER GRAPHQL: Permettra de faire simplement la conversation de données
 
 TODO : Update le format d'arrivée de stats avec new bdd
 */
+// import heroImageURL from "../../../assets/images/tgpq/persons/heroes/tgpq_character_peasant.png";
+// import monsterImageURL from "../../../assets/images/tgpq/persons/monsters/tgpq_monster_goblin.png";
+// const urlImageFront = "../../../assets/images/tgpq/persons/";
 
-import heroImageURL from "../../../assets/images/tgpq/persons/heroes/tgpq_character_peasant.png";
-import monsterImageURL from "../../../assets/images/tgpq/persons/monsters/tgpq_monster_goblin.png";
+export interface IItem {
+  id: string;
+  name: string;
+  price: number;
+  url_image: string;
+  stat_affected: string;
+  value: number;
+  type: string;
+  created_at: string;
+  updated_at: string;
+}
 
-export interface ICharacterInfo {
+export interface IPersonModel {
+  id: string;
   name: string;
   health_max: number;
-  health_actual: number;
-  strengh: number;
+  strength: number;
   dexterity: number;
   dodge: number;
   description: string;
   url_image: string;
+  difficulty: number;
+  category: string;
+  created_at: string;
+  updated_at: string;
 }
 
-export const characterInfos: ICharacterInfo[] = [
-  {
-    name: "Peasant Luciana",
-    health_max: 140,
-    health_actual: 120,
-    strengh: 70,
-    dexterity: 20,
-    dodge: 40,
-    description: "I will kick your ass, again",
-    url_image: heroImageURL,
-  },
-  {
-    name: "Macronnista",
-    health_max: 12000,
-    health_actual: 11937,
-    strengh: 90,
-    dexterity: 10,
-    dodge: 9000,
-    description: "Stay under my foot you poor",
-    url_image: monsterImageURL,
-  },
-];
+export interface IPerson {
+  id: string;
+  gold: number;
+  health: number;
+  userId: string;
+  created_at: string;
+  updated_at: string;
+  items?: IItem[];
+  personModel: IPersonModel;
+}
+
+export interface ILocation {
+  locationName: string;
+  imageUrl: string;
+}
 
 // export const globalStat = [
 //   { nbWin: 2, nbLose: 1, game: "TGPQ" },

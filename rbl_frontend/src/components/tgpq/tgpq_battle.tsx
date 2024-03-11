@@ -1,18 +1,27 @@
 import TGPQButtonBattle from "./tgpq_buttonbattle";
 import TGPQChaCardBody from "./tgpq_card_body";
-import { characterInfos } from "./data/tgpq_character_infos";
+
 import TGPQTitle from "./tgpq_title";
 import "../../styles/tgpq/tgpq_battle.css";
+import TGPQContext from "../../contexts/tgpq/TGPQContext";
+import { useContext, useEffect } from "react";
 
 function TGPQBattle() {
+  const { personHero, personMonster, setPersonHero, setPersonMonster } =
+    useContext(TGPQContext);
   // TODO : Find a better way to feed fct with character info -> props for now ?
   // TODO : Find a better way to feed fct with character info -> Hook ? Witch one ?
   // TODO : Handle images from database
-  const characterInformations = { characterInfos };
+
+  useEffect(() => {
+    setPersonHero(personHero);
+    setPersonMonster(personMonster);
+  }, [personHero, personMonster, setPersonHero, setPersonMonster]);
+
   return (
     <div className="font-family-tgpq-regular">
       <TGPQChaCardBody
-        characterInfos={characterInformations.characterInfos[1]}
+        personInfos={personMonster}
         isInColumn={false}
         isNameVisible={true}
         isCharacterImageVisible={true}
@@ -20,12 +29,12 @@ function TGPQBattle() {
         isHealthActualVisible={true}
       />
       <TGPQTitle
-        title="Choose to maximise your attack or defense for the next round"
+        title="Choose to attack or defend for the next round"
         howImportant={3}
       />
       <TGPQButtonBattle />
       <TGPQChaCardBody
-        characterInfos={characterInformations.characterInfos[0]}
+        personInfos={personHero}
         isInColumn={false}
         isNameVisible={true}
         isCharacterImageVisible={true}
