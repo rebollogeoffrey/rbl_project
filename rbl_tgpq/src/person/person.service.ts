@@ -61,10 +61,16 @@ export class PersonService {
     });
   }
 
+  // La methode est en privé car appellé par une autre méthode en interne.
+  // Mesure de sécurité
   private async battleVictory(idHero: string, idMonster: string) {
+    // Chercher le Hero via son ID
     const hero = await this.findById(idHero);
+
+    // Chercher le Monstre via son ID
     const monster = await this.findById(idMonster);
 
+    // Ajouter au Hero les golds que possedait le Monstre au Hero
     return await this.personRepository.save({
       id: idHero,
       gold: hero.gold + monster.gold,

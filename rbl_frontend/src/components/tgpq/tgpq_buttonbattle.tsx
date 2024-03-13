@@ -14,14 +14,15 @@ export default function TGPQButtonBattle() {
   } = useContext(TGPQContext);
 
   const actionHero = (mode: string) => {
+    console.log("personHero avant action :>> ", personHero);
     axios
       .patch(
         `http://localhost:8261/person/battle/${personHero.id}/${personMonster.id}/${mode}`
       )
       .then((res) => {
-        console.log("res.data :>> ", res.data);
         setPersonHero(res.data[6]);
         setPersonMonster(res.data[7]);
+        console.log("personHero apres action :>> ", res.data[6]);
       })
       .catch((err) => {
         console.log("err :>> ", err);

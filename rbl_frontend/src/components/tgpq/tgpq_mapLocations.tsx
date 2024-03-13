@@ -19,7 +19,6 @@ function TGPQMapLocations() {
       .catch((err) => {
         console.log("err :>> ", err);
       });
-    console.log("locationsArray :>> ", locationsArray);
   };
 
   if (!locationsArray[0]) {
